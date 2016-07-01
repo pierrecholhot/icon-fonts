@@ -1,0 +1,704 @@
+@font-face {
+	font-family: "laposte-icons";
+	src: url('./laposte-icons.eot');
+	src: url('./laposte-icons.eot?#iefix') format('eot'),
+		url('./laposte-icons.woff2') format('woff2'),
+		url('./laposte-icons.woff') format('woff'),
+		url('./laposte-icons.ttf') format('truetype'),
+		url('./laposte-icons.svg#laposte-icons') format('svg');
+}
+
+@mixin laposte-icons-styles {
+	font-family: "laposte-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%laposte-icons {
+	@include laposte-icons-styles;
+}
+
+@function laposte-icons-char($filename) {
+	$char: "";
+
+	@if $filename == International {
+		$char: "\E001";
+	}
+	@if $filename == achatventedevises {
+		$char: "\E002";
+	}
+	@if $filename == addtocart {
+		$char: "\E003";
+	}
+	@if $filename == agenda {
+		$char: "\E004";
+	}
+	@if $filename == annuaire {
+		$char: "\E005";
+	}
+	@if $filename == app {
+		$char: "\E006";
+	}
+	@if $filename == arrow-down {
+		$char: "\E007";
+	}
+	@if $filename == arrow-left {
+		$char: "\E008";
+	}
+	@if $filename == arrow-right {
+		$char: "\E009";
+	}
+	@if $filename == arrow-thin-down {
+		$char: "\E00A";
+	}
+	@if $filename == arrow-thin-left {
+		$char: "\E00B";
+	}
+	@if $filename == arrow-thin-right {
+		$char: "\E00C";
+	}
+	@if $filename == arrow-thin-up {
+		$char: "\E00D";
+	}
+	@if $filename == arrow-up {
+		$char: "\E00E";
+	}
+	@if $filename == automateaffranchissement {
+		$char: "\E00F";
+	}
+	@if $filename == bars {
+		$char: "\E010";
+	}
+	@if $filename == book {
+		$char: "\E011";
+	}
+	@if $filename == box {
+		$char: "\E012";
+	}
+	@if $filename == brand {
+		$char: "\E013";
+	}
+	@if $filename == btn-plus {
+		$char: "\E014";
+	}
+	@if $filename == bulb {
+		$char: "\E015";
+	}
+	@if $filename == bulle-alert {
+		$char: "\E016";
+	}
+	@if $filename == bulle-entreprise {
+		$char: "\E017";
+	}
+	@if $filename == bulle {
+		$char: "\E018";
+	}
+	@if $filename == bulles {
+		$char: "\E019";
+	}
+	@if $filename == calculator {
+		$char: "\E01A";
+	}
+	@if $filename == calendar {
+		$char: "\E01B";
+	}
+	@if $filename == cartable {
+		$char: "\E01C";
+	}
+	@if $filename == cartonscreen {
+		$char: "\E01D";
+	}
+	@if $filename == check {
+		$char: "\E01E";
+	}
+	@if $filename == check2 {
+		$char: "\E01F";
+	}
+	@if $filename == chevron-down {
+		$char: "\E020";
+	}
+	@if $filename == chevron-left {
+		$char: "\E021";
+	}
+	@if $filename == chevron-right {
+		$char: "\E022";
+	}
+	@if $filename == chevron-up {
+		$char: "\E023";
+	}
+	@if $filename == client {
+		$char: "\E024";
+	}
+	@if $filename == client2 {
+		$char: "\E025";
+	}
+	@if $filename == clock {
+		$char: "\E026";
+	}
+	@if $filename == close {
+		$char: "\E027";
+	}
+	@if $filename == colis {
+		$char: "\E028";
+	}
+	@if $filename == conso-entreprise {
+		$char: "\E029";
+	}
+	@if $filename == conso-small {
+		$char: "\E02A";
+	}
+	@if $filename == conso {
+		$char: "\E02B";
+	}
+	@if $filename == delivery {
+		$char: "\E02C";
+	}
+	@if $filename == denied {
+		$char: "\E02D";
+	}
+	@if $filename == devices {
+		$char: "\E02E";
+	}
+	@if $filename == digiposte {
+		$char: "\E02F";
+	}
+	@if $filename == discuss {
+		$char: "\E030";
+	}
+	@if $filename == distributeurautomatique {
+		$char: "\E031";
+	}
+	@if $filename == ean {
+		$char: "\E032";
+	}
+	@if $filename == edit {
+		$char: "\E033";
+	}
+	@if $filename == engagement {
+		$char: "\E034";
+	}
+	@if $filename == exclamation-bubble {
+		$char: "\E035";
+	}
+	@if $filename == exclamation {
+		$char: "\E036";
+	}
+	@if $filename == facebook {
+		$char: "\E037";
+	}
+	@if $filename == facteur {
+		$char: "\E038";
+	}
+	@if $filename == fav {
+		$char: "\E039";
+	}
+	@if $filename == file-user-attachement {
+		$char: "\E03A";
+	}
+	@if $filename == file-user {
+		$char: "\E03B";
+	}
+	@if $filename == file {
+		$char: "\E03C";
+	}
+	@if $filename == find-bp {
+		$char: "\E03D";
+	}
+	@if $filename == find-depot {
+		$char: "\E03E";
+	}
+	@if $filename == frame {
+		$char: "\E03F";
+	}
+	@if $filename == gear {
+		$char: "\E040";
+	}
+	@if $filename == googleplus {
+		$char: "\E041";
+	}
+	@if $filename == guys {
+		$char: "\E042";
+	}
+	@if $filename == handicap-auditif {
+		$char: "\E043";
+	}
+	@if $filename == handicap-mobilite-reduite {
+		$char: "\E044";
+	}
+	@if $filename == handicap-visuel {
+		$char: "\E045";
+	}
+	@if $filename == help {
+		$char: "\E046";
+	}
+	@if $filename == home {
+		$char: "\E047";
+	}
+	@if $filename == img-bubble {
+		$char: "\E048";
+	}
+	@if $filename == interrogation {
+		$char: "\E049";
+	}
+	@if $filename == key {
+		$char: "\E04A";
+	}
+	@if $filename == laposte {
+		$char: "\E04B";
+	}
+	@if $filename == location {
+		$char: "\E04C";
+	}
+	@if $filename == locked {
+		$char: "\E04D";
+	}
+	@if $filename == mail {
+		$char: "\E04E";
+	}
+	@if $filename == mobile {
+		$char: "\E04F";
+	}
+	@if $filename == newsletter {
+		$char: "\E050";
+	}
+	@if $filename == organisation {
+		$char: "\E051";
+	}
+	@if $filename == pause {
+		$char: "\E052";
+	}
+	@if $filename == pdf {
+		$char: "\E053";
+	}
+	@if $filename == pen {
+		$char: "\E054";
+	}
+	@if $filename == phone {
+		$char: "\E055";
+	}
+	@if $filename == photocopy {
+		$char: "\E056";
+	}
+	@if $filename == play {
+		$char: "\E057";
+	}
+	@if $filename == plus {
+		$char: "\E058";
+	}
+	@if $filename == poi {
+		$char: "\E059";
+	}
+	@if $filename == printer {
+		$char: "\E05A";
+	}
+	@if $filename == quotes {
+		$char: "\E05B";
+	}
+	@if $filename == relationship {
+		$char: "\E05C";
+	}
+	@if $filename == screen {
+		$char: "\E05D";
+	}
+	@if $filename == search {
+		$char: "\E05E";
+	}
+	@if $filename == share {
+		$char: "\E05F";
+	}
+	@if $filename == shop {
+		$char: "\E060";
+	}
+	@if $filename == solidarity {
+		$char: "\E061";
+	}
+	@if $filename == stylo {
+		$char: "\E062";
+	}
+	@if $filename == suplier {
+		$char: "\E063";
+	}
+	@if $filename == tel {
+		$char: "\E064";
+	}
+	@if $filename == tool {
+		$char: "\E065";
+	}
+	@if $filename == track {
+		$char: "\E066";
+	}
+	@if $filename == trash-thick {
+		$char: "\E067";
+	}
+	@if $filename == trash {
+		$char: "\E068";
+	}
+	@if $filename == twitter {
+		$char: "\E069";
+	}
+	@if $filename == user-bubble {
+		$char: "\E06A";
+	}
+	@if $filename == user-espace {
+		$char: "\E06B";
+	}
+	@if $filename == user {
+		$char: "\E06C";
+	}
+	@if $filename == valid {
+		$char: "\E06D";
+	}
+	@if $filename == youtube {
+		$char: "\E06E";
+	}
+
+	@return $char;
+}
+
+@mixin laposte-icons($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %laposte-icons;
+		} @else {
+			@include laposte-icons-styles;
+		}
+		content: laposte-icons-char($filename);
+	}
+}
+
+.laposte-icons-International {
+	@include laposte-icons(International);
+}
+.laposte-icons-achatventedevises {
+	@include laposte-icons(achatventedevises);
+}
+.laposte-icons-addtocart {
+	@include laposte-icons(addtocart);
+}
+.laposte-icons-agenda {
+	@include laposte-icons(agenda);
+}
+.laposte-icons-annuaire {
+	@include laposte-icons(annuaire);
+}
+.laposte-icons-app {
+	@include laposte-icons(app);
+}
+.laposte-icons-arrow-down {
+	@include laposte-icons(arrow-down);
+}
+.laposte-icons-arrow-left {
+	@include laposte-icons(arrow-left);
+}
+.laposte-icons-arrow-right {
+	@include laposte-icons(arrow-right);
+}
+.laposte-icons-arrow-thin-down {
+	@include laposte-icons(arrow-thin-down);
+}
+.laposte-icons-arrow-thin-left {
+	@include laposte-icons(arrow-thin-left);
+}
+.laposte-icons-arrow-thin-right {
+	@include laposte-icons(arrow-thin-right);
+}
+.laposte-icons-arrow-thin-up {
+	@include laposte-icons(arrow-thin-up);
+}
+.laposte-icons-arrow-up {
+	@include laposte-icons(arrow-up);
+}
+.laposte-icons-automateaffranchissement {
+	@include laposte-icons(automateaffranchissement);
+}
+.laposte-icons-bars {
+	@include laposte-icons(bars);
+}
+.laposte-icons-book {
+	@include laposte-icons(book);
+}
+.laposte-icons-box {
+	@include laposte-icons(box);
+}
+.laposte-icons-brand {
+	@include laposte-icons(brand);
+}
+.laposte-icons-btn-plus {
+	@include laposte-icons(btn-plus);
+}
+.laposte-icons-bulb {
+	@include laposte-icons(bulb);
+}
+.laposte-icons-bulle-alert {
+	@include laposte-icons(bulle-alert);
+}
+.laposte-icons-bulle-entreprise {
+	@include laposte-icons(bulle-entreprise);
+}
+.laposte-icons-bulle {
+	@include laposte-icons(bulle);
+}
+.laposte-icons-bulles {
+	@include laposte-icons(bulles);
+}
+.laposte-icons-calculator {
+	@include laposte-icons(calculator);
+}
+.laposte-icons-calendar {
+	@include laposte-icons(calendar);
+}
+.laposte-icons-cartable {
+	@include laposte-icons(cartable);
+}
+.laposte-icons-cartonscreen {
+	@include laposte-icons(cartonscreen);
+}
+.laposte-icons-check {
+	@include laposte-icons(check);
+}
+.laposte-icons-check2 {
+	@include laposte-icons(check2);
+}
+.laposte-icons-chevron-down {
+	@include laposte-icons(chevron-down);
+}
+.laposte-icons-chevron-left {
+	@include laposte-icons(chevron-left);
+}
+.laposte-icons-chevron-right {
+	@include laposte-icons(chevron-right);
+}
+.laposte-icons-chevron-up {
+	@include laposte-icons(chevron-up);
+}
+.laposte-icons-client {
+	@include laposte-icons(client);
+}
+.laposte-icons-client2 {
+	@include laposte-icons(client2);
+}
+.laposte-icons-clock {
+	@include laposte-icons(clock);
+}
+.laposte-icons-close {
+	@include laposte-icons(close);
+}
+.laposte-icons-colis {
+	@include laposte-icons(colis);
+}
+.laposte-icons-conso-entreprise {
+	@include laposte-icons(conso-entreprise);
+}
+.laposte-icons-conso-small {
+	@include laposte-icons(conso-small);
+}
+.laposte-icons-conso {
+	@include laposte-icons(conso);
+}
+.laposte-icons-delivery {
+	@include laposte-icons(delivery);
+}
+.laposte-icons-denied {
+	@include laposte-icons(denied);
+}
+.laposte-icons-devices {
+	@include laposte-icons(devices);
+}
+.laposte-icons-digiposte {
+	@include laposte-icons(digiposte);
+}
+.laposte-icons-discuss {
+	@include laposte-icons(discuss);
+}
+.laposte-icons-distributeurautomatique {
+	@include laposte-icons(distributeurautomatique);
+}
+.laposte-icons-ean {
+	@include laposte-icons(ean);
+}
+.laposte-icons-edit {
+	@include laposte-icons(edit);
+}
+.laposte-icons-engagement {
+	@include laposte-icons(engagement);
+}
+.laposte-icons-exclamation-bubble {
+	@include laposte-icons(exclamation-bubble);
+}
+.laposte-icons-exclamation {
+	@include laposte-icons(exclamation);
+}
+.laposte-icons-facebook {
+	@include laposte-icons(facebook);
+}
+.laposte-icons-facteur {
+	@include laposte-icons(facteur);
+}
+.laposte-icons-fav {
+	@include laposte-icons(fav);
+}
+.laposte-icons-file-user-attachement {
+	@include laposte-icons(file-user-attachement);
+}
+.laposte-icons-file-user {
+	@include laposte-icons(file-user);
+}
+.laposte-icons-file {
+	@include laposte-icons(file);
+}
+.laposte-icons-find-bp {
+	@include laposte-icons(find-bp);
+}
+.laposte-icons-find-depot {
+	@include laposte-icons(find-depot);
+}
+.laposte-icons-frame {
+	@include laposte-icons(frame);
+}
+.laposte-icons-gear {
+	@include laposte-icons(gear);
+}
+.laposte-icons-googleplus {
+	@include laposte-icons(googleplus);
+}
+.laposte-icons-guys {
+	@include laposte-icons(guys);
+}
+.laposte-icons-handicap-auditif {
+	@include laposte-icons(handicap-auditif);
+}
+.laposte-icons-handicap-mobilite-reduite {
+	@include laposte-icons(handicap-mobilite-reduite);
+}
+.laposte-icons-handicap-visuel {
+	@include laposte-icons(handicap-visuel);
+}
+.laposte-icons-help {
+	@include laposte-icons(help);
+}
+.laposte-icons-home {
+	@include laposte-icons(home);
+}
+.laposte-icons-img-bubble {
+	@include laposte-icons(img-bubble);
+}
+.laposte-icons-interrogation {
+	@include laposte-icons(interrogation);
+}
+.laposte-icons-key {
+	@include laposte-icons(key);
+}
+.laposte-icons-laposte {
+	@include laposte-icons(laposte);
+}
+.laposte-icons-location {
+	@include laposte-icons(location);
+}
+.laposte-icons-locked {
+	@include laposte-icons(locked);
+}
+.laposte-icons-mail {
+	@include laposte-icons(mail);
+}
+.laposte-icons-mobile {
+	@include laposte-icons(mobile);
+}
+.laposte-icons-newsletter {
+	@include laposte-icons(newsletter);
+}
+.laposte-icons-organisation {
+	@include laposte-icons(organisation);
+}
+.laposte-icons-pause {
+	@include laposte-icons(pause);
+}
+.laposte-icons-pdf {
+	@include laposte-icons(pdf);
+}
+.laposte-icons-pen {
+	@include laposte-icons(pen);
+}
+.laposte-icons-phone {
+	@include laposte-icons(phone);
+}
+.laposte-icons-photocopy {
+	@include laposte-icons(photocopy);
+}
+.laposte-icons-play {
+	@include laposte-icons(play);
+}
+.laposte-icons-plus {
+	@include laposte-icons(plus);
+}
+.laposte-icons-poi {
+	@include laposte-icons(poi);
+}
+.laposte-icons-printer {
+	@include laposte-icons(printer);
+}
+.laposte-icons-quotes {
+	@include laposte-icons(quotes);
+}
+.laposte-icons-relationship {
+	@include laposte-icons(relationship);
+}
+.laposte-icons-screen {
+	@include laposte-icons(screen);
+}
+.laposte-icons-search {
+	@include laposte-icons(search);
+}
+.laposte-icons-share {
+	@include laposte-icons(share);
+}
+.laposte-icons-shop {
+	@include laposte-icons(shop);
+}
+.laposte-icons-solidarity {
+	@include laposte-icons(solidarity);
+}
+.laposte-icons-stylo {
+	@include laposte-icons(stylo);
+}
+.laposte-icons-suplier {
+	@include laposte-icons(suplier);
+}
+.laposte-icons-tel {
+	@include laposte-icons(tel);
+}
+.laposte-icons-tool {
+	@include laposte-icons(tool);
+}
+.laposte-icons-track {
+	@include laposte-icons(track);
+}
+.laposte-icons-trash-thick {
+	@include laposte-icons(trash-thick);
+}
+.laposte-icons-trash {
+	@include laposte-icons(trash);
+}
+.laposte-icons-twitter {
+	@include laposte-icons(twitter);
+}
+.laposte-icons-user-bubble {
+	@include laposte-icons(user-bubble);
+}
+.laposte-icons-user-espace {
+	@include laposte-icons(user-espace);
+}
+.laposte-icons-user {
+	@include laposte-icons(user);
+}
+.laposte-icons-valid {
+	@include laposte-icons(valid);
+}
+.laposte-icons-youtube {
+	@include laposte-icons(youtube);
+}

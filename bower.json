@@ -1,0 +1,26 @@
+{
+  "name": "laposte-fonts",
+  "description": "Font icons for La Poste",
+  "main": "gulpfile.js",
+  "authors": [
+    "Pierre Cholhot"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "laposte",
+    "font",
+    "icons"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
