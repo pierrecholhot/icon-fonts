@@ -40,7 +40,7 @@ function makeFont(done){
 	var iconStream = gulp.src(config.src.svg).pipe(iconfont({
 	  fontName: config.fontName,
 	  formats: config.fontFormats,
-	  prependUnicode: true,
+	  prependUnicode: false,
 	  timestamp: timestamp
 	}));
 
