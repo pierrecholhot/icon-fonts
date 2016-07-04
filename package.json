@@ -13,6 +13,7 @@
     "gulp-consolidate": "^0.2.0",
     "gulp-git": "^1.8.0",
     "gulp-iconfont": "^8.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "handlebars": "^4.0.5",
     "minimist": "^1.2.0",

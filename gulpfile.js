@@ -4,6 +4,7 @@ var util = require('gulp-util');
 var bump = require('gulp-bump');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
+var rename = require('gulp-rename');
 
 var async = require('async');
 var fs = require('fs');
@@ -52,6 +53,9 @@ function makeFont(done){
 					fontName: config.fontName,
 					fontPath: config.fontPathFromStyles,
 					cssClass: config.fontName
+				}))
+				.pipe(rename(function(path){
+					if (path.basename !== 'font-face'){ path.basename = config.fontName; }
 				}))
 				.pipe(gulp.dest(config.dist.styles))
 				.on('finish', cb);
