@@ -17,6 +17,7 @@ var config = {
   fontName: 'brand-icons',
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
 	fontPathFromStyles: '../fonts/',
+	success: 'Release finished successfully',
 	bump: {
 		files: ['./bower.json', './package.json'],
 		allowed: ['major', 'minor', 'patch']
@@ -83,7 +84,7 @@ function bumpVersion () {
 function commitChanges () {
   return gulp.src('.')
     .pipe(git.add())
-    .pipe(git.commit('[Release] Add icons'));
+    .pipe(git.commit('[Release] Add icons '));
 }
 
 function pushChanges (cb) {
@@ -107,16 +108,13 @@ function defaultTask (callback) {
   rs(
     'clean',
     'make-font-files',
-    // 'bump-version',
-    // 'commit-changes',
-    // 'push-changes',
-    // 'create-new-tag',
+    'bump-version',
+    'commit-changes',
+    'push-changes',
+    'create-new-tag',
     function (error) {
-      if (error) {
-        console.log(error.message);
-      } else {
-        console.log('RELEASE FINISHED SUCCESSFULLY');
-      }
+      var status = error ? error.message : config.success;
+			console.log(status);
       callback(error);
     });
 }
