@@ -1,0 +1,252 @@
+@mixin brand-icons-styles {
+	font-family: "brand-icons";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
+%brand-icons {
+	@include brand-icons-styles;
+}
+
+@function brand-icons-char($filename) {
+	$char: ""; 
+	@if $filename == International { $char: "\EA01"; }
+	@if $filename == achatventedevises { $char: "\EA02"; }
+	@if $filename == addtocart { $char: "\EA03"; }
+	@if $filename == agenda { $char: "\EA04"; }
+	@if $filename == annuaire { $char: "\EA05"; }
+	@if $filename == app { $char: "\EA06"; }
+	@if $filename == arrow-down { $char: "\EA07"; }
+	@if $filename == arrow-left { $char: "\EA08"; }
+	@if $filename == arrow-right { $char: "\EA09"; }
+	@if $filename == arrow-thin-down { $char: "\EA0A"; }
+	@if $filename == arrow-thin-left { $char: "\EA0B"; }
+	@if $filename == arrow-thin-right { $char: "\EA0C"; }
+	@if $filename == arrow-thin-up { $char: "\EA0D"; }
+	@if $filename == arrow-up { $char: "\EA0E"; }
+	@if $filename == automateaffranchissement { $char: "\EA0F"; }
+	@if $filename == bars { $char: "\EA10"; }
+	@if $filename == book { $char: "\EA11"; }
+	@if $filename == box { $char: "\EA12"; }
+	@if $filename == brand { $char: "\EA13"; }
+	@if $filename == btn-plus { $char: "\EA14"; }
+	@if $filename == bulb { $char: "\EA15"; }
+	@if $filename == bulle-alert { $char: "\EA16"; }
+	@if $filename == bulle-entreprise { $char: "\EA17"; }
+	@if $filename == bulle { $char: "\EA18"; }
+	@if $filename == bulles { $char: "\EA19"; }
+	@if $filename == calculator { $char: "\EA1A"; }
+	@if $filename == calendar { $char: "\EA1B"; }
+	@if $filename == cartable { $char: "\EA1C"; }
+	@if $filename == cartonscreen { $char: "\EA1D"; }
+	@if $filename == check { $char: "\EA1E"; }
+	@if $filename == check2 { $char: "\EA1F"; }
+	@if $filename == chevron-down { $char: "\EA20"; }
+	@if $filename == chevron-left { $char: "\EA21"; }
+	@if $filename == chevron-right { $char: "\EA22"; }
+	@if $filename == chevron-up { $char: "\EA23"; }
+	@if $filename == client { $char: "\EA24"; }
+	@if $filename == client2 { $char: "\EA25"; }
+	@if $filename == clock { $char: "\EA26"; }
+	@if $filename == close { $char: "\EA27"; }
+	@if $filename == colis { $char: "\EA28"; }
+	@if $filename == conso-entreprise { $char: "\EA29"; }
+	@if $filename == conso-small { $char: "\EA2A"; }
+	@if $filename == conso { $char: "\EA2B"; }
+	@if $filename == delivery { $char: "\EA2C"; }
+	@if $filename == denied { $char: "\EA2D"; }
+	@if $filename == devices { $char: "\EA2E"; }
+	@if $filename == digiposte { $char: "\EA2F"; }
+	@if $filename == discuss { $char: "\EA30"; }
+	@if $filename == distributeurautomatique { $char: "\EA31"; }
+	@if $filename == ean { $char: "\EA32"; }
+	@if $filename == edit { $char: "\EA33"; }
+	@if $filename == engagement { $char: "\EA34"; }
+	@if $filename == exclamation-bubble { $char: "\EA35"; }
+	@if $filename == exclamation { $char: "\EA36"; }
+	@if $filename == facebook { $char: "\EA37"; }
+	@if $filename == facteur { $char: "\EA38"; }
+	@if $filename == fav { $char: "\EA39"; }
+	@if $filename == file-user-attachement { $char: "\EA3A"; }
+	@if $filename == file-user { $char: "\EA3B"; }
+	@if $filename == file { $char: "\EA3C"; }
+	@if $filename == find-bp { $char: "\EA3D"; }
+	@if $filename == find-depot { $char: "\EA3E"; }
+	@if $filename == frame { $char: "\EA3F"; }
+	@if $filename == gear { $char: "\EA40"; }
+	@if $filename == googleplus { $char: "\EA41"; }
+	@if $filename == guys { $char: "\EA42"; }
+	@if $filename == handicap-auditif { $char: "\EA43"; }
+	@if $filename == handicap-mobilite-reduite { $char: "\EA44"; }
+	@if $filename == handicap-visuel { $char: "\EA45"; }
+	@if $filename == help { $char: "\EA46"; }
+	@if $filename == home { $char: "\EA47"; }
+	@if $filename == img-bubble { $char: "\EA48"; }
+	@if $filename == interrogation { $char: "\EA49"; }
+	@if $filename == key { $char: "\EA4A"; }
+	@if $filename == laposte { $char: "\EA4B"; }
+	@if $filename == location { $char: "\EA4C"; }
+	@if $filename == locked { $char: "\EA4D"; }
+	@if $filename == mail { $char: "\EA4E"; }
+	@if $filename == mobile { $char: "\EA4F"; }
+	@if $filename == newsletter { $char: "\EA50"; }
+	@if $filename == organisation { $char: "\EA51"; }
+	@if $filename == pause { $char: "\EA52"; }
+	@if $filename == pdf { $char: "\EA53"; }
+	@if $filename == pen { $char: "\EA54"; }
+	@if $filename == phone { $char: "\EA55"; }
+	@if $filename == photocopy { $char: "\EA56"; }
+	@if $filename == play { $char: "\EA57"; }
+	@if $filename == plus { $char: "\EA58"; }
+	@if $filename == poi { $char: "\EA59"; }
+	@if $filename == printer { $char: "\EA5A"; }
+	@if $filename == quotes { $char: "\EA5B"; }
+	@if $filename == relationship { $char: "\EA5C"; }
+	@if $filename == screen { $char: "\EA5D"; }
+	@if $filename == search { $char: "\EA5E"; }
+	@if $filename == share { $char: "\EA5F"; }
+	@if $filename == shop { $char: "\EA60"; }
+	@if $filename == solidarity { $char: "\EA61"; }
+	@if $filename == stylo { $char: "\EA62"; }
+	@if $filename == suplier { $char: "\EA63"; }
+	@if $filename == tel { $char: "\EA64"; }
+	@if $filename == tool { $char: "\EA65"; }
+	@if $filename == track { $char: "\EA66"; }
+	@if $filename == trash-thick { $char: "\EA67"; }
+	@if $filename == trash { $char: "\EA68"; }
+	@if $filename == twitter { $char: "\EA69"; }
+	@if $filename == user-bubble { $char: "\EA6A"; }
+	@if $filename == user-espace { $char: "\EA6B"; }
+	@if $filename == user { $char: "\EA6C"; }
+	@if $filename == valid { $char: "\EA6D"; }
+	@if $filename == youtube { $char: "\EA6E"; }
+	@return $char;
+}
+
+@mixin brand-icons($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %brand-icons;
+		} @else {
+			@include brand-icons-styles;
+		}
+		content: brand-icons-char($filename);
+	}
+}
+
+.brand-icons-International { @include brand-icons(International); }
+.brand-icons-achatventedevises { @include brand-icons(achatventedevises); }
+.brand-icons-addtocart { @include brand-icons(addtocart); }
+.brand-icons-agenda { @include brand-icons(agenda); }
+.brand-icons-annuaire { @include brand-icons(annuaire); }
+.brand-icons-app { @include brand-icons(app); }
+.brand-icons-arrow-down { @include brand-icons(arrow-down); }
+.brand-icons-arrow-left { @include brand-icons(arrow-left); }
+.brand-icons-arrow-right { @include brand-icons(arrow-right); }
+.brand-icons-arrow-thin-down { @include brand-icons(arrow-thin-down); }
+.brand-icons-arrow-thin-left { @include brand-icons(arrow-thin-left); }
+.brand-icons-arrow-thin-right { @include brand-icons(arrow-thin-right); }
+.brand-icons-arrow-thin-up { @include brand-icons(arrow-thin-up); }
+.brand-icons-arrow-up { @include brand-icons(arrow-up); }
+.brand-icons-automateaffranchissement { @include brand-icons(automateaffranchissement); }
+.brand-icons-bars { @include brand-icons(bars); }
+.brand-icons-book { @include brand-icons(book); }
+.brand-icons-box { @include brand-icons(box); }
+.brand-icons-brand { @include brand-icons(brand); }
+.brand-icons-btn-plus { @include brand-icons(btn-plus); }
+.brand-icons-bulb { @include brand-icons(bulb); }
+.brand-icons-bulle-alert { @include brand-icons(bulle-alert); }
+.brand-icons-bulle-entreprise { @include brand-icons(bulle-entreprise); }
+.brand-icons-bulle { @include brand-icons(bulle); }
+.brand-icons-bulles { @include brand-icons(bulles); }
+.brand-icons-calculator { @include brand-icons(calculator); }
+.brand-icons-calendar { @include brand-icons(calendar); }
+.brand-icons-cartable { @include brand-icons(cartable); }
+.brand-icons-cartonscreen { @include brand-icons(cartonscreen); }
+.brand-icons-check { @include brand-icons(check); }
+.brand-icons-check2 { @include brand-icons(check2); }
+.brand-icons-chevron-down { @include brand-icons(chevron-down); }
+.brand-icons-chevron-left { @include brand-icons(chevron-left); }
+.brand-icons-chevron-right { @include brand-icons(chevron-right); }
+.brand-icons-chevron-up { @include brand-icons(chevron-up); }
+.brand-icons-client { @include brand-icons(client); }
+.brand-icons-client2 { @include brand-icons(client2); }
+.brand-icons-clock { @include brand-icons(clock); }
+.brand-icons-close { @include brand-icons(close); }
+.brand-icons-colis { @include brand-icons(colis); }
+.brand-icons-conso-entreprise { @include brand-icons(conso-entreprise); }
+.brand-icons-conso-small { @include brand-icons(conso-small); }
+.brand-icons-conso { @include brand-icons(conso); }
+.brand-icons-delivery { @include brand-icons(delivery); }
+.brand-icons-denied { @include brand-icons(denied); }
+.brand-icons-devices { @include brand-icons(devices); }
+.brand-icons-digiposte { @include brand-icons(digiposte); }
+.brand-icons-discuss { @include brand-icons(discuss); }
+.brand-icons-distributeurautomatique { @include brand-icons(distributeurautomatique); }
+.brand-icons-ean { @include brand-icons(ean); }
+.brand-icons-edit { @include brand-icons(edit); }
+.brand-icons-engagement { @include brand-icons(engagement); }
+.brand-icons-exclamation-bubble { @include brand-icons(exclamation-bubble); }
+.brand-icons-exclamation { @include brand-icons(exclamation); }
+.brand-icons-facebook { @include brand-icons(facebook); }
+.brand-icons-facteur { @include brand-icons(facteur); }
+.brand-icons-fav { @include brand-icons(fav); }
+.brand-icons-file-user-attachement { @include brand-icons(file-user-attachement); }
+.brand-icons-file-user { @include brand-icons(file-user); }
+.brand-icons-file { @include brand-icons(file); }
+.brand-icons-find-bp { @include brand-icons(find-bp); }
+.brand-icons-find-depot { @include brand-icons(find-depot); }
+.brand-icons-frame { @include brand-icons(frame); }
+.brand-icons-gear { @include brand-icons(gear); }
+.brand-icons-googleplus { @include brand-icons(googleplus); }
+.brand-icons-guys { @include brand-icons(guys); }
+.brand-icons-handicap-auditif { @include brand-icons(handicap-auditif); }
+.brand-icons-handicap-mobilite-reduite { @include brand-icons(handicap-mobilite-reduite); }
+.brand-icons-handicap-visuel { @include brand-icons(handicap-visuel); }
+.brand-icons-help { @include brand-icons(help); }
+.brand-icons-home { @include brand-icons(home); }
+.brand-icons-img-bubble { @include brand-icons(img-bubble); }
+.brand-icons-interrogation { @include brand-icons(interrogation); }
+.brand-icons-key { @include brand-icons(key); }
+.brand-icons-laposte { @include brand-icons(laposte); }
+.brand-icons-location { @include brand-icons(location); }
+.brand-icons-locked { @include brand-icons(locked); }
+.brand-icons-mail { @include brand-icons(mail); }
+.brand-icons-mobile { @include brand-icons(mobile); }
+.brand-icons-newsletter { @include brand-icons(newsletter); }
+.brand-icons-organisation { @include brand-icons(organisation); }
+.brand-icons-pause { @include brand-icons(pause); }
+.brand-icons-pdf { @include brand-icons(pdf); }
+.brand-icons-pen { @include brand-icons(pen); }
+.brand-icons-phone { @include brand-icons(phone); }
+.brand-icons-photocopy { @include brand-icons(photocopy); }
+.brand-icons-play { @include brand-icons(play); }
+.brand-icons-plus { @include brand-icons(plus); }
+.brand-icons-poi { @include brand-icons(poi); }
+.brand-icons-printer { @include brand-icons(printer); }
+.brand-icons-quotes { @include brand-icons(quotes); }
+.brand-icons-relationship { @include brand-icons(relationship); }
+.brand-icons-screen { @include brand-icons(screen); }
+.brand-icons-search { @include brand-icons(search); }
+.brand-icons-share { @include brand-icons(share); }
+.brand-icons-shop { @include brand-icons(shop); }
+.brand-icons-solidarity { @include brand-icons(solidarity); }
+.brand-icons-stylo { @include brand-icons(stylo); }
+.brand-icons-suplier { @include brand-icons(suplier); }
+.brand-icons-tel { @include brand-icons(tel); }
+.brand-icons-tool { @include brand-icons(tool); }
+.brand-icons-track { @include brand-icons(track); }
+.brand-icons-trash-thick { @include brand-icons(trash-thick); }
+.brand-icons-trash { @include brand-icons(trash); }
+.brand-icons-twitter { @include brand-icons(twitter); }
+.brand-icons-user-bubble { @include brand-icons(user-bubble); }
+.brand-icons-user-espace { @include brand-icons(user-espace); }
+.brand-icons-user { @include brand-icons(user); }
+.brand-icons-valid { @include brand-icons(valid); }
+.brand-icons-youtube { @include brand-icons(youtube); }

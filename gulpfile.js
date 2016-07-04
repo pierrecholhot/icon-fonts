@@ -3,87 +3,106 @@ var git = require('gulp-git');
 var util = require('gulp-util');
 var bump = require('gulp-bump');
 var iconfont = require('gulp-iconfont');
-var iconfontCss = require('gulp-iconfont-css');
+var consolidate = require('gulp-consolidate');
 
+var async = require('async');
 var fs = require('fs');
 var ms = require('minimist');
 var rs = require('run-sequence');
 
 var timestamp = Math.round(Date.now() / 1000);
-var availableBumps = ['major', 'minor', 'patch'];
 
 var config = {
-  fontName: 'laposte-icons',
-  formats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
-  branch: 'master',
-  svg: ['src/svg/*.svg']
+  fontName: 'brand-icons',
+  fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
+	fontPathFromStyles: '../fonts/',
+	bump: {
+		files: ['./bower.json', './package.json'],
+		allowed: ['major', 'minor', 'patch']
+	},
+	git: {
+		upstream: 'origin',
+		branch: 'master'
+	},
+  src: {
+		svg: './src/svg/*.svg',
+		templates: './src/templates/*.*'
+	},
+	dist: {
+		root: './dist',
+		fonts: './dist/fonts',
+		styles: './dist/styles'
+	}
 };
 
-var iconFontOptions = {
-  fontName: config.fontName,
-  formats: config.formats,
-  prependUnicode: true,
-  timestamp: timestamp
-};
+function makeFont(done){
 
-var iconFontCssBaseOptions = {
-  fontPath: './',
-  fontName: config.fontName,
-  cssClass: config.fontName
-};
+	var iconStream = gulp.src(config.src.svg).pipe(iconfont({
+	  fontName: config.fontName,
+	  formats: config.fontFormats,
+	  prependUnicode: true,
+	  timestamp: timestamp
+	}));
 
-function makeFont(ext){
-  var iconFontCssOptions = Object.assign({}, iconFontCssBaseOptions, { path: ext, targetPath: './laposte-fonts.' + ext });
-  return gulp.src(config.svg)
-    .pipe(iconfontCss(iconFontCssOptions))
-    .pipe(iconfont(iconFontOptions))
-    .pipe(gulp.dest('dist/fonts/'));
+	function handleGlyphs (cb) {
+		iconStream.on('glyphs', function(glyphs, options) {
+			gulp.src(config.src.templates)
+				.pipe(consolidate('lodash', {
+					glyphs: glyphs,
+					fontName: config.fontName,
+					fontPath: config.fontPathFromStyles,
+					cssClass: config.fontName
+				}))
+				.pipe(gulp.dest(config.dist.styles))
+				.on('finish', cb);
+		});
+	}
+
+	function handleFonts (cb) {
+		iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', cb);
+	}
+
+	async.parallel([handleGlyphs, handleFonts], done);
 }
 
-gulp.task('make-font-files-css',  function() { return makeFont('css');  });
-gulp.task('make-font-files-less', function() { return makeFont('less'); });
-gulp.task('make-font-files-scss', function() { return makeFont('scss'); });
-
-gulp.task('bump-version', function () {
+function bumpVersion () {
   var opts = {};
   var args = ms(process.argv.slice(2));
-  for (var i = 0; i < availableBumps.length; i++) {
-    if (args[availableBumps[i]]) { opts.type = availableBumps[i] };
+  for (var i = 0; i < config.bump.allowed.length; i++) {
+    if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] };
   }
-  return gulp.src(['./bower.json', './package.json'])
+  return gulp.src(config.bump.files)
     .pipe(bump(opts).on('error', util.log))
     .pipe(gulp.dest('./'));
-});
+}
 
-gulp.task('commit-changes', function () {
+function commitChanges () {
   return gulp.src('.')
     .pipe(git.add())
-    .pipe(git.commit('[Release] Bumped version number'));
-});
+    .pipe(git.commit('[Release] Add icons'));
+}
 
-gulp.task('push-changes', function (cb) {
-  git.push('origin', config.branch, cb);
-});
+function pushChanges (cb) {
+  git.push(config.git.upstream, config.git.branch, cb);
+}
 
-gulp.task('create-new-tag', function (cb) {
+function createNewTag (cb) {
   var version = JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
     if (error) { return cb(error); }
-    git.push('origin', config.branch, { args: '--tags' }, cb);
+    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, cb);
   });
-});
+}
 
-gulp.task('clean', function (callback) {
-  return require('del')('./dist', callback);
-});
+function clean (callback) {
+  return require('del')(config.dist.root, callback);
+}
 
-gulp.task('add', function (callback) {
+function defaultTask (callback) {
   rs(
     'clean',
-    'make-font-files-scss',
-    'make-font-files-less',
-    'make-font-files-css',
+    'make-font-files',
     // 'bump-version',
     // 'commit-changes',
     // 'push-changes',
@@ -96,4 +115,12 @@ gulp.task('add', function (callback) {
       }
       callback(error);
     });
-});
+}
+
+gulp.task('make-font-files', makeFont);
+gulp.task('bump-version', bumpVersion);
+gulp.task('commit-changes', commitChanges);
+gulp.task('push-changes', pushChanges);
+gulp.task('create-new-tag', createNewTag);
+gulp.task('clean', clean);
+gulp.task('default', defaultTask);

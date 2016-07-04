@@ -1,13 +1,10 @@
 {
-  "name": "laposte-fonts",
-  "description": "Font icons for La Poste",
+  "name": "font-icons-repo",
+  "description": "Font icons repo",
   "main": "gulpfile.js",
-  "authors": [
-    "Pierre Cholhot"
-  ],
+  "authors": ["Pierre Cholhot"],
   "license": "ISC",
   "keywords": [
-    "laposte",
     "font",
     "icons"
   ],

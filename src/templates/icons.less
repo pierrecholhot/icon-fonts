@@ -1,0 +1,31 @@
+.<%= cssClass%>-base-pseudo {
+	font-family: "<%= fontName %>";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.<%= cssClass%>-char(@filename) {
+	<% _.each(glyphs, function(glyph) { %>@<%= glyph.name %>: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>";
+	<% }); %>
+	content: @@filename;
+}
+
+.<%= cssClass%>(@filename, @insert: before) {
+	@pseudo-selector: ~":@{insert}";
+
+	&@{pseudo-selector} {
+		&:extend(.<%= cssClass%>-base-pseudo);
+		.<%= cssClass%>-char(@filename);
+	}
+}
+
+<% _.each(glyphs, function(glyph) { %>.<%= cssClass%>-<%= glyph.name %> {
+	.<%= cssClass%>(<%= glyph.name %>);
+}
+<% }); %>

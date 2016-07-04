@@ -1,23 +1,22 @@
 {
-  "name": "laposte-fonts",
+  "name": "font-icons-repo",
   "version": "0.0.1",
-  "description": "Font icons for La Poste",
+  "description": "Font icons repo",
   "main": "gulpfile.js",
   "private": true,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Pierre Cholhot",
   "license": "ISC",
   "devDependencies": {
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.2.0",
+    "gulp-consolidate": "^0.2.0",
     "gulp-git": "^1.8.0",
     "gulp-iconfont": "^8.0.1",
-    "gulp-iconfont-css": "^2.1.0",
     "gulp-util": "^3.0.7",
+    "handlebars": "^4.0.5",
     "minimist": "^1.2.0",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "staged-git-files": "0.0.4"
   }
 }

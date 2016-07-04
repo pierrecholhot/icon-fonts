@@ -1,0 +1,466 @@
+.brand-icons-base-pseudo {
+	font-family: "brand-icons";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	speak: none;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.brand-icons-char(@filename) {
+	@International: "\EA01";
+	@achatventedevises: "\EA02";
+	@addtocart: "\EA03";
+	@agenda: "\EA04";
+	@annuaire: "\EA05";
+	@app: "\EA06";
+	@arrow-down: "\EA07";
+	@arrow-left: "\EA08";
+	@arrow-right: "\EA09";
+	@arrow-thin-down: "\EA0A";
+	@arrow-thin-left: "\EA0B";
+	@arrow-thin-right: "\EA0C";
+	@arrow-thin-up: "\EA0D";
+	@arrow-up: "\EA0E";
+	@automateaffranchissement: "\EA0F";
+	@bars: "\EA10";
+	@book: "\EA11";
+	@box: "\EA12";
+	@brand: "\EA13";
+	@btn-plus: "\EA14";
+	@bulb: "\EA15";
+	@bulle-alert: "\EA16";
+	@bulle-entreprise: "\EA17";
+	@bulle: "\EA18";
+	@bulles: "\EA19";
+	@calculator: "\EA1A";
+	@calendar: "\EA1B";
+	@cartable: "\EA1C";
+	@cartonscreen: "\EA1D";
+	@check: "\EA1E";
+	@check2: "\EA1F";
+	@chevron-down: "\EA20";
+	@chevron-left: "\EA21";
+	@chevron-right: "\EA22";
+	@chevron-up: "\EA23";
+	@client: "\EA24";
+	@client2: "\EA25";
+	@clock: "\EA26";
+	@close: "\EA27";
+	@colis: "\EA28";
+	@conso-entreprise: "\EA29";
+	@conso-small: "\EA2A";
+	@conso: "\EA2B";
+	@delivery: "\EA2C";
+	@denied: "\EA2D";
+	@devices: "\EA2E";
+	@digiposte: "\EA2F";
+	@discuss: "\EA30";
+	@distributeurautomatique: "\EA31";
+	@ean: "\EA32";
+	@edit: "\EA33";
+	@engagement: "\EA34";
+	@exclamation-bubble: "\EA35";
+	@exclamation: "\EA36";
+	@facebook: "\EA37";
+	@facteur: "\EA38";
+	@fav: "\EA39";
+	@file-user-attachement: "\EA3A";
+	@file-user: "\EA3B";
+	@file: "\EA3C";
+	@find-bp: "\EA3D";
+	@find-depot: "\EA3E";
+	@frame: "\EA3F";
+	@gear: "\EA40";
+	@googleplus: "\EA41";
+	@guys: "\EA42";
+	@handicap-auditif: "\EA43";
+	@handicap-mobilite-reduite: "\EA44";
+	@handicap-visuel: "\EA45";
+	@help: "\EA46";
+	@home: "\EA47";
+	@img-bubble: "\EA48";
+	@interrogation: "\EA49";
+	@key: "\EA4A";
+	@laposte: "\EA4B";
+	@location: "\EA4C";
+	@locked: "\EA4D";
+	@mail: "\EA4E";
+	@mobile: "\EA4F";
+	@newsletter: "\EA50";
+	@organisation: "\EA51";
+	@pause: "\EA52";
+	@pdf: "\EA53";
+	@pen: "\EA54";
+	@phone: "\EA55";
+	@photocopy: "\EA56";
+	@play: "\EA57";
+	@plus: "\EA58";
+	@poi: "\EA59";
+	@printer: "\EA5A";
+	@quotes: "\EA5B";
+	@relationship: "\EA5C";
+	@screen: "\EA5D";
+	@search: "\EA5E";
+	@share: "\EA5F";
+	@shop: "\EA60";
+	@solidarity: "\EA61";
+	@stylo: "\EA62";
+	@suplier: "\EA63";
+	@tel: "\EA64";
+	@tool: "\EA65";
+	@track: "\EA66";
+	@trash-thick: "\EA67";
+	@trash: "\EA68";
+	@twitter: "\EA69";
+	@user-bubble: "\EA6A";
+	@user-espace: "\EA6B";
+	@user: "\EA6C";
+	@valid: "\EA6D";
+	@youtube: "\EA6E";
+	
+	content: @@filename;
+}
+
+.brand-icons(@filename, @insert: before) {
+	@pseudo-selector: ~":@{insert}";
+
+	&@{pseudo-selector} {
+		&:extend(.brand-icons-base-pseudo);
+		.brand-icons-char(@filename);
+	}
+}
+
+.brand-icons-International {
+	.brand-icons(International);
+}
+.brand-icons-achatventedevises {
+	.brand-icons(achatventedevises);
+}
+.brand-icons-addtocart {
+	.brand-icons(addtocart);
+}
+.brand-icons-agenda {
+	.brand-icons(agenda);
+}
+.brand-icons-annuaire {
+	.brand-icons(annuaire);
+}
+.brand-icons-app {
+	.brand-icons(app);
+}
+.brand-icons-arrow-down {
+	.brand-icons(arrow-down);
+}
+.brand-icons-arrow-left {
+	.brand-icons(arrow-left);
+}
+.brand-icons-arrow-right {
+	.brand-icons(arrow-right);
+}
+.brand-icons-arrow-thin-down {
+	.brand-icons(arrow-thin-down);
+}
+.brand-icons-arrow-thin-left {
+	.brand-icons(arrow-thin-left);
+}
+.brand-icons-arrow-thin-right {
+	.brand-icons(arrow-thin-right);
+}
+.brand-icons-arrow-thin-up {
+	.brand-icons(arrow-thin-up);
+}
+.brand-icons-arrow-up {
+	.brand-icons(arrow-up);
+}
+.brand-icons-automateaffranchissement {
+	.brand-icons(automateaffranchissement);
+}
+.brand-icons-bars {
+	.brand-icons(bars);
+}
+.brand-icons-book {
+	.brand-icons(book);
+}
+.brand-icons-box {
+	.brand-icons(box);
+}
+.brand-icons-brand {
+	.brand-icons(brand);
+}
+.brand-icons-btn-plus {
+	.brand-icons(btn-plus);
+}
+.brand-icons-bulb {
+	.brand-icons(bulb);
+}
+.brand-icons-bulle-alert {
+	.brand-icons(bulle-alert);
+}
+.brand-icons-bulle-entreprise {
+	.brand-icons(bulle-entreprise);
+}
+.brand-icons-bulle {
+	.brand-icons(bulle);
+}
+.brand-icons-bulles {
+	.brand-icons(bulles);
+}
+.brand-icons-calculator {
+	.brand-icons(calculator);
+}
+.brand-icons-calendar {
+	.brand-icons(calendar);
+}
+.brand-icons-cartable {
+	.brand-icons(cartable);
+}
+.brand-icons-cartonscreen {
+	.brand-icons(cartonscreen);
+}
+.brand-icons-check {
+	.brand-icons(check);
+}
+.brand-icons-check2 {
+	.brand-icons(check2);
+}
+.brand-icons-chevron-down {
+	.brand-icons(chevron-down);
+}
+.brand-icons-chevron-left {
+	.brand-icons(chevron-left);
+}
+.brand-icons-chevron-right {
+	.brand-icons(chevron-right);
+}
+.brand-icons-chevron-up {
+	.brand-icons(chevron-up);
+}
+.brand-icons-client {
+	.brand-icons(client);
+}
+.brand-icons-client2 {
+	.brand-icons(client2);
+}
+.brand-icons-clock {
+	.brand-icons(clock);
+}
+.brand-icons-close {
+	.brand-icons(close);
+}
+.brand-icons-colis {
+	.brand-icons(colis);
+}
+.brand-icons-conso-entreprise {
+	.brand-icons(conso-entreprise);
+}
+.brand-icons-conso-small {
+	.brand-icons(conso-small);
+}
+.brand-icons-conso {
+	.brand-icons(conso);
+}
+.brand-icons-delivery {
+	.brand-icons(delivery);
+}
+.brand-icons-denied {
+	.brand-icons(denied);
+}
+.brand-icons-devices {
+	.brand-icons(devices);
+}
+.brand-icons-digiposte {
+	.brand-icons(digiposte);
+}
+.brand-icons-discuss {
+	.brand-icons(discuss);
+}
+.brand-icons-distributeurautomatique {
+	.brand-icons(distributeurautomatique);
+}
+.brand-icons-ean {
+	.brand-icons(ean);
+}
+.brand-icons-edit {
+	.brand-icons(edit);
+}
+.brand-icons-engagement {
+	.brand-icons(engagement);
+}
+.brand-icons-exclamation-bubble {
+	.brand-icons(exclamation-bubble);
+}
+.brand-icons-exclamation {
+	.brand-icons(exclamation);
+}
+.brand-icons-facebook {
+	.brand-icons(facebook);
+}
+.brand-icons-facteur {
+	.brand-icons(facteur);
+}
+.brand-icons-fav {
+	.brand-icons(fav);
+}
+.brand-icons-file-user-attachement {
+	.brand-icons(file-user-attachement);
+}
+.brand-icons-file-user {
+	.brand-icons(file-user);
+}
+.brand-icons-file {
+	.brand-icons(file);
+}
+.brand-icons-find-bp {
+	.brand-icons(find-bp);
+}
+.brand-icons-find-depot {
+	.brand-icons(find-depot);
+}
+.brand-icons-frame {
+	.brand-icons(frame);
+}
+.brand-icons-gear {
+	.brand-icons(gear);
+}
+.brand-icons-googleplus {
+	.brand-icons(googleplus);
+}
+.brand-icons-guys {
+	.brand-icons(guys);
+}
+.brand-icons-handicap-auditif {
+	.brand-icons(handicap-auditif);
+}
+.brand-icons-handicap-mobilite-reduite {
+	.brand-icons(handicap-mobilite-reduite);
+}
+.brand-icons-handicap-visuel {
+	.brand-icons(handicap-visuel);
+}
+.brand-icons-help {
+	.brand-icons(help);
+}
+.brand-icons-home {
+	.brand-icons(home);
+}
+.brand-icons-img-bubble {
+	.brand-icons(img-bubble);
+}
+.brand-icons-interrogation {
+	.brand-icons(interrogation);
+}
+.brand-icons-key {
+	.brand-icons(key);
+}
+.brand-icons-laposte {
+	.brand-icons(laposte);
+}
+.brand-icons-location {
+	.brand-icons(location);
+}
+.brand-icons-locked {
+	.brand-icons(locked);
+}
+.brand-icons-mail {
+	.brand-icons(mail);
+}
+.brand-icons-mobile {
+	.brand-icons(mobile);
+}
+.brand-icons-newsletter {
+	.brand-icons(newsletter);
+}
+.brand-icons-organisation {
+	.brand-icons(organisation);
+}
+.brand-icons-pause {
+	.brand-icons(pause);
+}
+.brand-icons-pdf {
+	.brand-icons(pdf);
+}
+.brand-icons-pen {
+	.brand-icons(pen);
+}
+.brand-icons-phone {
+	.brand-icons(phone);
+}
+.brand-icons-photocopy {
+	.brand-icons(photocopy);
+}
+.brand-icons-play {
+	.brand-icons(play);
+}
+.brand-icons-plus {
+	.brand-icons(plus);
+}
+.brand-icons-poi {
+	.brand-icons(poi);
+}
+.brand-icons-printer {
+	.brand-icons(printer);
+}
+.brand-icons-quotes {
+	.brand-icons(quotes);
+}
+.brand-icons-relationship {
+	.brand-icons(relationship);
+}
+.brand-icons-screen {
+	.brand-icons(screen);
+}
+.brand-icons-search {
+	.brand-icons(search);
+}
+.brand-icons-share {
+	.brand-icons(share);
+}
+.brand-icons-shop {
+	.brand-icons(shop);
+}
+.brand-icons-solidarity {
+	.brand-icons(solidarity);
+}
+.brand-icons-stylo {
+	.brand-icons(stylo);
+}
+.brand-icons-suplier {
+	.brand-icons(suplier);
+}
+.brand-icons-tel {
+	.brand-icons(tel);
+}
+.brand-icons-tool {
+	.brand-icons(tool);
+}
+.brand-icons-track {
+	.brand-icons(track);
+}
+.brand-icons-trash-thick {
+	.brand-icons(trash-thick);
+}
+.brand-icons-trash {
+	.brand-icons(trash);
+}
+.brand-icons-twitter {
+	.brand-icons(twitter);
+}
+.brand-icons-user-bubble {
+	.brand-icons(user-bubble);
+}
+.brand-icons-user-espace {
+	.brand-icons(user-espace);
+}
+.brand-icons-user {
+	.brand-icons(user);
+}
+.brand-icons-valid {
+	.brand-icons(valid);
+}
+.brand-icons-youtube {
+	.brand-icons(youtube);
+}
