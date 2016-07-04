@@ -20,7 +20,7 @@ var config = {
 	success: 'Release finished successfully',
 	bump: {
 		files: ['./bower.json', './package.json'],
-		allowed: ['major', 'minor', 'patch']
+		allowed: ['patch', 'minor', 'major']
 	},
 	git: {
 		upstream: 'origin',
@@ -71,7 +71,7 @@ function makeFont(done){
 }
 
 function bumpVersion () {
-  var opts = {};
+  var opts = { type: config.bump.allowed[0] };
   var args = ms(process.argv.slice(2));
   for (var i = 0; i < config.bump.allowed.length; i++) {
     if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] };
