@@ -36,7 +36,11 @@ var config = {
   }
 };
 
-function makeFont(done) {
+function cleanDist(callback) {
+  return require('del')(config.dist.root, callback);
+}
+
+function makeFonts(callback) {
 
   var iconStream, handleGlyphs, handleFonts;
 
@@ -45,7 +49,7 @@ function makeFont(done) {
     formats: config.fontFormats
   }));
 
-  handleGlyphs = function (callback) {
+  handleGlyphs = function (done) {
     iconStream.on('glyphs', function (glyphs, options) {
       gulp.src(config.src.templates)
         .pipe(consolidate('lodash', {
@@ -54,23 +58,21 @@ function makeFont(done) {
           fontPath: config.fontPathFromStyles,
           cssClass: config.fontName
         }))
-        .pipe(rename(renameStyles))
+        .pipe(rename(function (path) {
+          if (path.basename !== 'font-face') {
+            path.basename = config.fontName;
+          }
+        }))
         .pipe(gulp.dest(config.dist.styles))
-        .on('finish', callback);
+        .on('finish', done);
     });
   };
 
-  handleFonts = function (callback) {
-    iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', callback);
+  handleFonts = function (done) {
+    iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', done);
   };
 
-  as.parallel([handleGlyphs, handleFonts], done);
-}
-
-function renameStyles(path) {
-  if (path.basename !== 'font-face') {
-    path.basename = config.fontName;
-  }
+  as.parallel([handleGlyphs, handleFonts], callback);
 }
 
 function bumpVersion() {
@@ -99,7 +101,7 @@ function pushChanges(callback) {
 }
 
 function createNewTag(callback) {
-  var version = JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
+  var version = JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
     if (error) {
@@ -111,29 +113,24 @@ function createNewTag(callback) {
   });
 }
 
-function clean(callback) {
-  return require('del')(config.dist.root, callback);
+function readMe() {
+  console.log(fs.readFileSync('readme.md', 'utf8'));
 }
 
-function defaultTask(callback) {
-  rs(
-    'clean',
-    'make-font-files',
-    'bump-version',
-    'commit-changes',
-    'push-changes',
-    'create-new-tag',
-    function (error) {
-      var status = error ? error.message : config.success;
-      console.log(status);
-      callback(error);
-    });
+function addIcons(callback) {
+  var done = function (error) {
+    console.log(error ? error.message : config.success);
+    callback(error);
+  };
+  rs('__clean-dist', '__make-font-files', '__bump-version', '__commit-changes', '__push-changes', '__create-new-tag', done);
 }
 
-gulp.task('make-font-files', makeFont);
-gulp.task('bump-version', bumpVersion);
-gulp.task('commit-changes', commitChanges);
-gulp.task('push-changes', pushChanges);
-gulp.task('create-new-tag', createNewTag);
-gulp.task('clean', clean);
-gulp.task('default', defaultTask);
+gulp.task('__clean-dist', cleanDist);
+gulp.task('__make-font-files', makeFonts);
+gulp.task('__bump-version', bumpVersion);
+gulp.task('__commit-changes', commitChanges);
+gulp.task('__push-changes', pushChanges);
+gulp.task('__create-new-tag', createNewTag);
+
+gulp.task('default', readMe);
+gulp.task('icons', addIcons);
