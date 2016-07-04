@@ -7,8 +7,8 @@ var rename = require('gulp-rename');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 
-var as = require('async');
 var fs = require('fs');
+var as = require('async');
 var ms = require('minimist');
 var rs = require('run-sequence');
 
@@ -118,19 +118,26 @@ function readMe() {
 }
 
 function addIcons(callback) {
-  var done = function (error) {
-    console.log(error ? error.message : config.success);
-    callback(error);
-  };
-  rs('__clean-dist', '__make-font-files', '__bump-version', '__commit-changes', '__push-changes', '__create-new-tag', done);
+  rs(
+    'ಠ_ಠ___clean-dist',
+    'ಠ_ಠ___make-font-files',
+    'ಠ_ಠ___bump-version',
+    'ಠ_ಠ___commit-changes',
+    'ಠ_ಠ___push-changes',
+    'ಠ_ಠ___create-new-tag',
+    function (error) {
+      console.log(error ? error.message : config.success);
+      callback(error);
+    }
+  );
 }
 
-gulp.task('__clean-dist', cleanDist);
-gulp.task('__make-font-files', makeFonts);
-gulp.task('__bump-version', bumpVersion);
-gulp.task('__commit-changes', commitChanges);
-gulp.task('__push-changes', pushChanges);
-gulp.task('__create-new-tag', createNewTag);
+gulp.task('ಠ_ಠ___clean-dist', cleanDist);
+gulp.task('ಠ_ಠ___make-font-files', makeFonts);
+gulp.task('ಠ_ಠ___bump-version', bumpVersion);
+gulp.task('ಠ_ಠ___commit-changes', commitChanges);
+gulp.task('ಠ_ಠ___push-changes', pushChanges);
+gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);
