@@ -12,7 +12,7 @@ var as = require('async');
 var ms = require('minimist');
 var rs = require('run-sequence');
 
-var config = {
+var config = Object.freeze({
   fontName: 'brand-icons',
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
   fontPathFromStyles: '../fonts/',
@@ -34,14 +34,13 @@ var config = {
     fonts: './dist/fonts',
     styles: './dist/styles'
   }
-};
+});
 
 function cleanDist(callback) {
   return require('del')(config.dist.root, callback);
 }
 
 function makeFonts(callback) {
-
   var iconStream, handleGlyphs, handleFonts;
 
   iconStream = gulp.src(config.src.svg).pipe(iconfont({
@@ -76,14 +75,10 @@ function makeFonts(callback) {
 }
 
 function bumpVersion() {
-  var opts = {
-    type: config.bump.allowed[0]
-  };
+  var opts = { type: config.bump.allowed[0] };
   var args = ms(process.argv.slice(2));
   for (var i = 0; i < config.bump.allowed.length; i++) {
-    if (args[config.bump.allowed[i]]) {
-      opts.type = config.bump.allowed[i]
-    };
+    if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] }
   }
   return gulp.src(config.bump.files)
     .pipe(bump(opts).on('error', util.log))
@@ -104,12 +99,8 @@ function createNewTag(callback) {
   var version = JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
-    if (error) {
-      return callback(error);
-    }
-    git.push(config.git.upstream, config.git.branch, {
-      args: '--tags'
-    }, callback);
+    if (error) { return callback(error); }
+    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, callback);
   });
 }
 
@@ -120,7 +111,7 @@ function readMe() {
 function addIcons(callback) {
   rs(
     'ಠ_ಠ___clean-dist',
-    'ಠ_ಠ___make-font-files',
+    'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',
     'ಠ_ಠ___commit-changes',
     'ಠ_ಠ___push-changes',
@@ -133,7 +124,7 @@ function addIcons(callback) {
 }
 
 gulp.task('ಠ_ಠ___clean-dist', cleanDist);
-gulp.task('ಠ_ಠ___make-font-files', makeFonts);
+gulp.task('ಠ_ಠ___make-fonts', makeFonts);
 gulp.task('ಠ_ಠ___bump-version', bumpVersion);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
