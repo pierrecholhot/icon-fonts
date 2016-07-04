@@ -47,7 +47,7 @@ function makeFont(done){
 	  timestamp: timestamp
 	}));
 
-	function handleGlyphs (cb) {
+	function handleGlyphs (callback) {
 		iconStream.on('glyphs', function(glyphs, options) {
 			gulp.src(config.src.templates)
 				.pipe(consolidate('lodash', {
@@ -60,12 +60,12 @@ function makeFont(done){
 					if (path.basename !== 'font-face'){ path.basename = config.fontName; }
 				}))
 				.pipe(gulp.dest(config.dist.styles))
-				.on('finish', cb);
+				.on('finish', callback);
 		});
 	}
 
-	function handleFonts (cb) {
-		iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', cb);
+	function handleFonts (callback) {
+		iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', callback);
 	}
 
 	async.parallel([handleGlyphs, handleFonts], done);
@@ -88,16 +88,16 @@ function commitChanges () {
     .pipe(git.commit('[Release] Add icons '));
 }
 
-function pushChanges (cb) {
-  git.push(config.git.upstream, config.git.branch, cb);
+function pushChanges (callback) {
+  git.push(config.git.upstream, config.git.branch, callback);
 }
 
-function createNewTag (cb) {
+function createNewTag (callback) {
   var version = JSON.parse(fs.readFileSync('./package.json', 'utf8')).version;
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
-    if (error) { return cb(error); }
-    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, cb);
+    if (error) { return callback(error); }
+    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, callback);
   });
 }
 
