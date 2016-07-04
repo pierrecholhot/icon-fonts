@@ -6,6 +6,7 @@ var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 
+var semver = require('semver');
 var async = require('async');
 var fs = require('fs');
 var ms = require('minimist');

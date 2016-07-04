@@ -16,8 +16,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "handlebars": "^4.0.5",
+    "lodash": "^4.13.1",
     "minimist": "^1.2.0",
     "run-sequence": "^1.2.2",
+    "semver": "^5.2.0",
     "staged-git-files": "0.0.4"
   }
 }
