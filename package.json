@@ -1,6 +1,6 @@
 {
   "name": "font-icons-repo",
-  "version": "0.0.10",
+  "version": "0.0.18",
   "description": "Font icons repo",
   "main": "gulpfile.js",
   "private": true,
@@ -18,6 +18,6 @@
     "lodash": "^4.13.1",
     "minimist": "^1.2.0",
     "run-sequence": "^1.2.2",
-    "staged-git-files": "0.0.4"
+    "staged-files": "^0.1.2"
   }
 }

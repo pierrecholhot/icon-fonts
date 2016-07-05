@@ -11,7 +11,7 @@ var fs = require('fs');
 var as = require('async');
 var ms = require('minimist');
 var rs = require('run-sequence');
-var sf = require('staged-git-files');
+var sf = require('staged-files');
 
 var config = Object.freeze({
   fontName: 'brand-icons',
@@ -87,11 +87,8 @@ function bumpVersion() {
 }
 
 function addChanges(callback) {
-  var stream = gulp.src('.').pipe(git.add());
-  sf(function(err, results){
-  	console.log(results)
-    callback(err);
-  });
+  return gulp.src('.')
+    .pipe(git.add())
 }
 
 function commitChanges() {
