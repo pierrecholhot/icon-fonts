@@ -1,3 +1,8 @@
+<a name="0.0.91"></a>
+## [0.0.91](https://github.com/pierrecholhot/icon-fonts/compare/0.0.90...0.0.91) (2016-07-05)
+
+
+
 <a name="0.0.90"></a>
 ## [0.0.90](https://github.com/pierrecholhot/icon-fonts/compare/0.0.89...0.0.90) (2016-07-05)
 
