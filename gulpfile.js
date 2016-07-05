@@ -97,9 +97,9 @@ function addChanges() {
 function storeChanges(callback) {
   xc(cmdStagedFiles, function(error, stdout, stderr) {
     var x, data = stdout.split('\n');
-    while(x = data.pop()){
-      if (x.split('.').pop() === 'svg') {
-        newIcons.push(x);
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].split('.').pop() === 'svg') {
+        newIcons.push(data[i]);
       }
     }
     callback();
