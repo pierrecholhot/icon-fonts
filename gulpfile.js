@@ -114,7 +114,7 @@ function storeChanges(callback) {
 }
 
 function commitChanges() {
-  var commitMessage = newIcons.length ? '[Release] ' + newIcons.join(', ') : '[Update]';
+  var commitMessage = newIcons.length ? 'feat(icons): ' + newIcons.join(', ') : 'chore(update): Automated build';
   return gulp.src('.').pipe(git.commit(commitMessage));
 }
 
