@@ -108,7 +108,7 @@ function storeChanges(callback) {
 
 function commitChanges() {
   return gulp.src('.')
-    .pipe(git.commit('[Release] Add icons '));
+    .pipe(git.commit('[Release] Added/Modified icons ' + newIcons.join(', ')));
 }
 
 function pushChanges(callback) {
