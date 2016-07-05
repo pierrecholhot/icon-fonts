@@ -30,7 +30,7 @@ var config = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    newIconsCommitMessage: 'feat(icons): \n\n<%= icons %>',
+    newIconsCommitMessage: 'feat(icons): Add new icons\n\n<%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
   src: {
