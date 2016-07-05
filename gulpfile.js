@@ -92,9 +92,14 @@ function addChanges() {
 
 function storeChanges(callback) {
   var exec = require('child_process').exec;
-  var cmd = 'git status';
+  var cmd = 'git diff --name-only --staged';
   exec(cmd, function(error, stdout, stderr) {
-    console.log(stdout.split('\n'));
+    var data = stdout.split('\n');
+    for (var i = 0; i < data.length; i++) {
+      var line = data[i];
+      console.log(line);
+    }
+    console.log();
     callback();
   });
 }
