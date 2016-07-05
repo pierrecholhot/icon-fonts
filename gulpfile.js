@@ -100,7 +100,7 @@ function bumpVersion() {
 }
 
 function changelog() {
-  return conventionalChangelog({ preset: 'angular', releaseCount: 0, outputUnreleased: true })
+  return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
     .pipe(fs.createWriteStream('./CHANGELOG.md'));
 }
 
