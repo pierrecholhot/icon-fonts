@@ -101,7 +101,7 @@ function bumpVersion() {
 
 function changelog() {
   return gulp.src('CHANGELOG.md', { buffer: false })
-    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 0 }))
+    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 50 }))
     .pipe(gulp.dest('./'));
 }
 
