@@ -23,3 +23,8 @@
 .brand-icons-locked:before { content: "\EA0B"; } 
 .brand-icons-mail:before { content: "\EA0C"; } 
 .brand-icons-mobile:before { content: "\EA0D"; } 
+.brand-icons-phone:before { content: "\EA0E"; } 
+.brand-icons-photocopy:before { content: "\EA0F"; } 
+.brand-icons-play:before { content: "\EA10"; } 
+.brand-icons-plus:before { content: "\EA11"; } 
+.brand-icons-poi:before { content: "\EA12"; } 
