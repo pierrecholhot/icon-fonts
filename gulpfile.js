@@ -11,6 +11,7 @@ var fs = require('fs');
 var as = require('async');
 var ms = require('minimist');
 var rs = require('run-sequence');
+var sf = require('staged-git-files');
 
 var config = Object.freeze({
   fontName: 'brand-icons',
@@ -85,9 +86,16 @@ function bumpVersion() {
     .pipe(gulp.dest('./'));
 }
 
+function addChanges(callback) {
+  var stream = gulp.src('.').pipe(git.add());
+  sf(function(err, results){
+  	console.log(results)
+    callback(err);
+  });
+}
+
 function commitChanges() {
   return gulp.src('.')
-    .pipe(git.add())
     .pipe(git.commit('[Release] Add icons '));
 }
 
@@ -113,6 +121,7 @@ function addIcons(callback) {
     'ಠ_ಠ___clean-dist',
     'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',
+    'ಠ_ಠ___add-changes',
     'ಠ_ಠ___commit-changes',
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
@@ -126,6 +135,7 @@ function addIcons(callback) {
 gulp.task('ಠ_ಠ___clean-dist', cleanDist);
 gulp.task('ಠ_ಠ___make-fonts', makeFonts);
 gulp.task('ಠ_ಠ___bump-version', bumpVersion);
+gulp.task('ಠ_ಠ___add-changes', addChanges);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
 gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
