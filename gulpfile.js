@@ -99,9 +99,9 @@ function bumpVersion() {
     .pipe(gulp.dest('./'));
 }
 
-function changelog(callback) {
-  conventionalChangelog({ preset: 'angular', releaseCount: 0 })
-    .pipe(fs.createWriteStream('./CHANGELOG.md')).on('finish', callback);
+function changelog() {
+  return conventionalChangelog({ preset: 'angular', releaseCount: 0, outputUnreleased: true })
+    .pipe(fs.createWriteStream('./CHANGELOG.md'));
 }
 
 function addChanges() {
