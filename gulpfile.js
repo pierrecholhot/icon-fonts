@@ -107,10 +107,12 @@ function storeChanges(callback) {
   exec(cmdStagedFiles, function(error, stdout, stderr) {
     var x, data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
+      console.log(data[i]);
       if (data[i].split('.').pop() === 'svg' && data[i].indexOf('dist/') === -1) {
         newIcons.push(data[i].split('/').pop());
       }
     }
+    console.log(newIcons);
     callback();
   });
 }

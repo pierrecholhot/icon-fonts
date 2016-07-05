@@ -1,5 +1,15 @@
+<a name="0.0.53"></a>
+## [0.0.53](https://github.com/pierrecholhot/icon-fonts/compare/0.0.52...v0.0.53) (2016-07-05)
+
+
+
 <a name="0.0.52"></a>
-## [0.0.52](https://github.com/pierrecholhot/icon-fonts/compare/0.0.51...v0.0.52) (2016-07-05)
+## [0.0.52](https://github.com/pierrecholhot/icon-fonts/compare/0.0.51...0.0.52) (2016-07-05)
+
+
+### Features
+
+* **icons:** Add new icons ([04df739](https://github.com/pierrecholhot/icon-fonts/commit/04df739))
 
 
 

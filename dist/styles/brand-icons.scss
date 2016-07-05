@@ -34,6 +34,9 @@
 	@if $filename == play { $char: "\EA10"; }
 	@if $filename == plus { $char: "\EA11"; }
 	@if $filename == poi { $char: "\EA12"; }
+	@if $filename == screen { $char: "\EA13"; }
+	@if $filename == share { $char: "\EA14"; }
+	@if $filename == shop { $char: "\EA15"; }
 	@return $char;
 }
 
@@ -66,3 +69,6 @@
 .brand-icons-play { @include brand-icons(play); }
 .brand-icons-plus { @include brand-icons(plus); }
 .brand-icons-poi { @include brand-icons(poi); }
+.brand-icons-screen { @include brand-icons(screen); }
+.brand-icons-share { @include brand-icons(share); }
+.brand-icons-shop { @include brand-icons(shop); }
