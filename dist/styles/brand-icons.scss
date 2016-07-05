@@ -20,16 +20,6 @@
 	@if $filename == arrow-left { $char: "\EA02"; }
 	@if $filename == arrow-right { $char: "\EA03"; }
 	@if $filename == arrow-up { $char: "\EA04"; }
-	@if $filename == bulb { $char: "\EA05"; }
-	@if $filename == bulle { $char: "\EA06"; }
-	@if $filename == check { $char: "\EA07"; }
-	@if $filename == clock { $char: "\EA08"; }
-	@if $filename == googleplus { $char: "\EA09"; }
-	@if $filename == home { $char: "\EA0A"; }
-	@if $filename == locked { $char: "\EA0B"; }
-	@if $filename == mail { $char: "\EA0C"; }
-	@if $filename == mobile { $char: "\EA0D"; }
-	@if $filename == phone { $char: "\EA0E"; }
 	@return $char;
 }
 
@@ -48,13 +38,3 @@
 .brand-icons-arrow-left { @include brand-icons(arrow-left); }
 .brand-icons-arrow-right { @include brand-icons(arrow-right); }
 .brand-icons-arrow-up { @include brand-icons(arrow-up); }
-.brand-icons-bulb { @include brand-icons(bulb); }
-.brand-icons-bulle { @include brand-icons(bulle); }
-.brand-icons-check { @include brand-icons(check); }
-.brand-icons-clock { @include brand-icons(clock); }
-.brand-icons-googleplus { @include brand-icons(googleplus); }
-.brand-icons-home { @include brand-icons(home); }
-.brand-icons-locked { @include brand-icons(locked); }
-.brand-icons-mail { @include brand-icons(mail); }
-.brand-icons-mobile { @include brand-icons(mobile); }
-.brand-icons-phone { @include brand-icons(phone); }
