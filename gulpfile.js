@@ -92,7 +92,7 @@ function addChanges() {
 
 function storeChanges() {
   sf().on('finish', function(a,b,c){
-    console.log(a,b,c);
+    console.log(this);
   })
   // console.log();
 }
