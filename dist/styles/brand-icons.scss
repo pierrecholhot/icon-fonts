@@ -23,6 +23,7 @@
 	@if $filename == bulb { $char: "\EA05"; }
 	@if $filename == bulle { $char: "\EA06"; }
 	@if $filename == check { $char: "\EA07"; }
+	@if $filename == clock { $char: "\EA08"; }
 	@return $char;
 }
 
@@ -44,3 +45,4 @@
 .brand-icons-bulb { @include brand-icons(bulb); }
 .brand-icons-bulle { @include brand-icons(bulle); }
 .brand-icons-check { @include brand-icons(check); }
+.brand-icons-clock { @include brand-icons(clock); }
