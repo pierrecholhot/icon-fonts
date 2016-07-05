@@ -1,5 +1,15 @@
+<a name="0.0.47"></a>
+## [0.0.47](https://github.com/pierrecholhot/icon-fonts/compare/0.0.46...v0.0.47) (2016-07-05)
+
+
+
 <a name="0.0.46"></a>
-## [0.0.46](https://github.com/pierrecholhot/icon-fonts/compare/0.0.45...v0.0.46) (2016-07-05)
+## [0.0.46](https://github.com/pierrecholhot/icon-fonts/compare/0.0.45...0.0.46) (2016-07-05)
+
+
+### Features
+
+* **icons:** home.svg ([9c0a038](https://github.com/pierrecholhot/icon-fonts/commit/9c0a038))
 
 
 
