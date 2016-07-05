@@ -90,11 +90,13 @@ function addChanges() {
   return gulp.src('.').pipe(git.add());
 }
 
-function storeChanges() {
-  sf().on('finish', function(a,b,c){
-    console.log(this);
-  })
-  // console.log();
+function storeChanges(callback) {
+  var exec = require('child_process').exec;
+  var cmd = 'git status';
+  exec(cmd, function(error, stdout, stderr) {
+    console.log(stdout);
+    callback();
+  });
 }
 
 function commitChanges() {
