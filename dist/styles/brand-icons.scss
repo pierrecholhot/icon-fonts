@@ -26,6 +26,9 @@
 	@if $filename == clock { $char: "\EA08"; }
 	@if $filename == googleplus { $char: "\EA09"; }
 	@if $filename == home { $char: "\EA0A"; }
+	@if $filename == locked { $char: "\EA0B"; }
+	@if $filename == mail { $char: "\EA0C"; }
+	@if $filename == mobile { $char: "\EA0D"; }
 	@return $char;
 }
 
@@ -50,3 +53,6 @@
 .brand-icons-clock { @include brand-icons(clock); }
 .brand-icons-googleplus { @include brand-icons(googleplus); }
 .brand-icons-home { @include brand-icons(home); }
+.brand-icons-locked { @include brand-icons(locked); }
+.brand-icons-mail { @include brand-icons(mail); }
+.brand-icons-mobile { @include brand-icons(mobile); }

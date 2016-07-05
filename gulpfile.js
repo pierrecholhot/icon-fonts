@@ -8,12 +8,12 @@ var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var conventionalChangelog = require('gulp-conventional-changelog');
 
+var _ = require('lodash');
 var fs = require('fs');
-var as = require('async');
-var ms = require('minimist');
-var rs = require('run-sequence');
-var sf = require('staged-files');
-var xc = require('child_process').exec;
+var exec = require('child_process').exec;
+var async = require('async');
+var minimist = require('minimist');
+var runSequence = require('run-sequence');
 
 var newIcons = [];
 var cmdStagedFiles = 'git diff --name-only --staged';
@@ -29,7 +29,9 @@ var config = Object.freeze({
   },
   git: {
     upstream: 'origin',
-    branch: 'master'
+    branch: 'master',
+    newIconsCommitMessage: 'feat(icons): \n\n<%= icons %>',
+    defaultCommitMessage: 'chore(update): Automated build'
   },
   src: {
     svg: './src/svg/*.svg',
@@ -77,12 +79,12 @@ function makeFonts(callback) {
     iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', done);
   };
 
-  as.parallel([handleGlyphs, handleFonts], callback);
+  async.parallel([handleGlyphs, handleFonts], callback);
 }
 
 function bumpVersion() {
   var opts = { type: config.bump.allowed[0] };
-  var args = ms(process.argv.slice(2));
+  var args = minimist(process.argv.slice(2));
   for (var i = 0; i < config.bump.allowed.length; i++) {
     if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] }
   }
@@ -102,7 +104,7 @@ function addChanges() {
 }
 
 function storeChanges(callback) {
-  xc(cmdStagedFiles, function(error, stdout, stderr) {
+  exec(cmdStagedFiles, function(error, stdout, stderr) {
     var x, data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
       if (data[i].split('.').pop() === 'svg' && data[i].indexOf('dist/') === -1) {
@@ -114,8 +116,13 @@ function storeChanges(callback) {
 }
 
 function commitChanges() {
-  var commitMessage = newIcons.length ? 'feat(icons): ' + newIcons.join(', ') : 'chore(update): Automated build';
-  return gulp.src('.').pipe(git.commit(commitMessage));
+  var message = config.git.defaultCommitMessage;
+  if (newIcons.length) {
+    message = _.template(config.git.newIconsCommitMessage)({
+      icons: newIcons.join('\n')
+    });
+  }
+  return gulp.src('.').pipe(git.commit(message));
 }
 
 function pushChanges(callback) {
@@ -136,7 +143,7 @@ function readMe() {
 }
 
 function addIcons(callback) {
-  rs(
+  runSequence(
     'ಠ_ಠ___clean-dist',
     'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',

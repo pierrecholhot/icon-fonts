@@ -20,3 +20,6 @@
 .brand-icons-clock:before { content: "\EA08"; } 
 .brand-icons-googleplus:before { content: "\EA09"; } 
 .brand-icons-home:before { content: "\EA0A"; } 
+.brand-icons-locked:before { content: "\EA0B"; } 
+.brand-icons-mail:before { content: "\EA0C"; } 
+.brand-icons-mobile:before { content: "\EA0D"; } 
