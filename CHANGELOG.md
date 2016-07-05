@@ -1,5 +1,15 @@
+<a name="0.0.72"></a>
+## [0.0.72](https://github.com/pierrecholhot/icon-fonts/compare/0.0.71...v0.0.72) (2016-07-05)
+
+
+
 <a name="0.0.71"></a>
-## [0.0.71](https://github.com/pierrecholhot/icon-fonts/compare/0.0.70...v0.0.71) (2016-07-05)
+## [0.0.71](https://github.com/pierrecholhot/icon-fonts/compare/0.0.70...0.0.71) (2016-07-05)
+
+
+### Features
+
+* **icons:** client.svg, clock.svg ([fa04916](https://github.com/pierrecholhot/icon-fonts/commit/fa04916))
 
 
 
