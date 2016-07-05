@@ -98,8 +98,8 @@ function storeChanges(callback) {
   xc(cmdStagedFiles, function(error, stdout, stderr) {
     var x, data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
-      if (data[i].split('.').pop() === 'svg') {
-        newIcons.push(data[i]);
+      if (data[i].split('.').pop() === 'svg' && data[i].indexOf('dist/') === -1) {
+        newIcons.push(data[i].split('/').pop());
       }
     }
     callback();
