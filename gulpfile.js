@@ -95,7 +95,7 @@ function bumpVersion() {
 
 function changelog() {
   return gulp.src('CHANGELOG.md', { buffer: false })
-    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 0 }))
+    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 0, debug: console.log.bind(console) }))
     .pipe(gulp.dest('./'));
 }
 
@@ -107,8 +107,7 @@ function storeChanges(callback) {
   exec(cmdStagedFiles, function(error, stdout, stderr) {
     var x, data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
-      console.log(data[i]);
-      if (data[i].split('.').pop() === 'svg' && data[i].indexOf('dist/') === -1) {
+      if (data[i].indexOf('src/svg/') === 0) {
         newIcons.push(data[i].split('/').pop());
       }
     }
