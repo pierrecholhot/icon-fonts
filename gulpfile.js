@@ -160,6 +160,9 @@ function addIcons(callback) {
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
     'ಠ_ಠ___changelog',
+    'ಠ_ಠ___add-changes',
+    'ಠ_ಠ___commit-changes',
+    'ಠ_ಠ___push-changes',
     function (error) {
       console.log(error ? error.message : config.success);
       callback(error);
