@@ -6,6 +6,7 @@ var bump = require('gulp-bump');
 var rename = require('gulp-rename');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
+var conventionalChangelog = require('gulp-conventional-changelog');
 
 var fs = require('fs');
 var as = require('async');
@@ -90,6 +91,12 @@ function bumpVersion() {
     .pipe(gulp.dest('./'));
 }
 
+function changelog() {
+  return gulp.src('CHANGELOG.md', { buffer: false })
+    .pipe(conventionalChangelog({ preset: 'angular' }))
+    .pipe(gulp.dest('./'));
+}
+
 function addChanges() {
   return gulp.src('.').pipe(git.add());
 }
@@ -125,7 +132,7 @@ function createNewTag(callback) {
 }
 
 function readMe() {
-  console.log(fs.readFileSync('readme.md', 'utf8'));
+  console.log(fs.readFileSync('README.md', 'utf8'));
 }
 
 function addIcons(callback) {
@@ -133,6 +140,7 @@ function addIcons(callback) {
     'ಠ_ಠ___clean-dist',
     'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',
+    'ಠ_ಠ___changelog',
     'ಠ_ಠ___add-changes',
     'ಠ_ಠ___store-changes',
     'ಠ_ಠ___commit-changes',
@@ -148,6 +156,7 @@ function addIcons(callback) {
 gulp.task('ಠ_ಠ___clean-dist', cleanDist);
 gulp.task('ಠ_ಠ___make-fonts', makeFonts);
 gulp.task('ಠ_ಠ___bump-version', bumpVersion);
+gulp.task('ಠ_ಠ___changelog', changelog);
 gulp.task('ಠ_ಠ___add-changes', addChanges);
 gulp.task('ಠ_ಠ___store-changes', storeChanges);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);

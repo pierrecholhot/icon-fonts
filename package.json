@@ -1,6 +1,6 @@
 {
   "name": "font-icons-repo",
-  "version": "0.0.36",
+  "version": "0.0.42",
   "description": "Font icons repo",
   "main": "gulpfile.js",
   "private": true,
@@ -11,6 +11,7 @@
     "gulp": "^3.9.1",
     "gulp-bump": "^2.2.0",
     "gulp-consolidate": "^0.2.0",
+    "gulp-conventional-changelog": "^1.1.0",
     "gulp-git": "^1.8.0",
     "gulp-iconfont": "^8.0.1",
     "gulp-rename": "^1.2.2",
