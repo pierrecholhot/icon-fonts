@@ -20,6 +20,9 @@
 	@if $filename == arrow-left { $char: "\EA02"; }
 	@if $filename == arrow-right { $char: "\EA03"; }
 	@if $filename == arrow-up { $char: "\EA04"; }
+	@if $filename == arrow2 { $char: "\EA05"; }
+	@if $filename == automateaffranchissement { $char: "\EA06"; }
+	@if $filename == book { $char: "\EA07"; }
 	@return $char;
 }
 
@@ -38,3 +41,6 @@
 .brand-icons-arrow-left { @include brand-icons(arrow-left); }
 .brand-icons-arrow-right { @include brand-icons(arrow-right); }
 .brand-icons-arrow-up { @include brand-icons(arrow-up); }
+.brand-icons-arrow2 { @include brand-icons(arrow2); }
+.brand-icons-automateaffranchissement { @include brand-icons(automateaffranchissement); }
+.brand-icons-book { @include brand-icons(book); }
