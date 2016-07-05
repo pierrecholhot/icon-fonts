@@ -111,7 +111,6 @@ function storeChanges(callback) {
         newIcons.push(data[i].split('/').pop());
       }
     }
-    console.log(newIcons);
     callback();
   });
 }

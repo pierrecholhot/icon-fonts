@@ -1,6 +1,6 @@
 {
   "name": "font-icons-repo",
-  "version": "0.0.61",
+  "version": "0.0.62",
   "description": "Font icons repo",
   "main": "gulpfile.js",
   "authors": ["Pierre Cholhot"],

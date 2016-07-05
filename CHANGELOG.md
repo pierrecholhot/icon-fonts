@@ -1,5 +1,15 @@
+<a name="0.0.62"></a>
+## [0.0.62](https://github.com/pierrecholhot/icon-fonts/compare/0.0.61...v0.0.62) (2016-07-05)
+
+
+
 <a name="0.0.61"></a>
-## [0.0.61](https://github.com/pierrecholhot/icon-fonts/compare/0.0.60...v0.0.61) (2016-07-05)
+## [0.0.61](https://github.com/pierrecholhot/icon-fonts/compare/0.0.60...0.0.61) (2016-07-05)
+
+
+### Features
+
+* **icons:** bulb.svg, bulle.svg, check.svg, clock.svg, googleplus.svg, home.svg, locked.svg, mail.svg, mobile.svg, phone.svg ([5c6f1d2](https://github.com/pierrecholhot/icon-fonts/commit/5c6f1d2))
 
 
 
