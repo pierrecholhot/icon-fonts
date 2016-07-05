@@ -97,7 +97,7 @@ function storeChanges(callback) {
     var data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
       var line = data[i];
-      if(!line.indexOf('dist/')){
+      if(line.indexOf('dist') === -1){
         console.log(line);
       }
     }
