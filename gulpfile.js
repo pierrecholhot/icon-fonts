@@ -152,12 +152,12 @@ function addIcons(callback) {
     'ಠ_ಠ___clean-dist',
     'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',
-    'ಠ_ಠ___changelog',
     'ಠ_ಠ___add-changes',
     'ಠ_ಠ___store-changes',
     'ಠ_ಠ___commit-changes',
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
+    'ಠ_ಠ___changelog',
     function (error) {
       console.log(error ? error.message : config.success);
       callback(error);
@@ -168,12 +168,12 @@ function addIcons(callback) {
 gulp.task('ಠ_ಠ___clean-dist', cleanDist);
 gulp.task('ಠ_ಠ___make-fonts', makeFonts);
 gulp.task('ಠ_ಠ___bump-version', bumpVersion);
-gulp.task('ಠ_ಠ___changelog', changelog);
 gulp.task('ಠ_ಠ___add-changes', addChanges);
 gulp.task('ಠ_ಠ___store-changes', storeChanges);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
 gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
+gulp.task('ಠ_ಠ___changelog', changelog);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);

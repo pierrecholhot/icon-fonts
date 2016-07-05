@@ -20,12 +20,6 @@
 	@if $filename == arrow-left { $char: "\EA02"; }
 	@if $filename == arrow-right { $char: "\EA03"; }
 	@if $filename == arrow-up { $char: "\EA04"; }
-	@if $filename == automateaffranchissement { $char: "\EA05"; }
-	@if $filename == book { $char: "\EA06"; }
-	@if $filename == box { $char: "\EA07"; }
-	@if $filename == brand { $char: "\EA08"; }
-	@if $filename == bulles { $char: "\EA09"; }
-	@if $filename == calculator { $char: "\EA0A"; }
 	@return $char;
 }
 
@@ -44,9 +38,3 @@
 .brand-icons-arrow-left { @include brand-icons(arrow-left); }
 .brand-icons-arrow-right { @include brand-icons(arrow-right); }
 .brand-icons-arrow-up { @include brand-icons(arrow-up); }
-.brand-icons-automateaffranchissement { @include brand-icons(automateaffranchissement); }
-.brand-icons-book { @include brand-icons(book); }
-.brand-icons-box { @include brand-icons(box); }
-.brand-icons-brand { @include brand-icons(brand); }
-.brand-icons-bulles { @include brand-icons(bulles); }
-.brand-icons-calculator { @include brand-icons(calculator); }
