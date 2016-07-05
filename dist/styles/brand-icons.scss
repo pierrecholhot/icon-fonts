@@ -25,6 +25,7 @@
 	@if $filename == check { $char: "\EA07"; }
 	@if $filename == clock { $char: "\EA08"; }
 	@if $filename == googleplus { $char: "\EA09"; }
+	@if $filename == home { $char: "\EA0A"; }
 	@return $char;
 }
 
@@ -48,3 +49,4 @@
 .brand-icons-check { @include brand-icons(check); }
 .brand-icons-clock { @include brand-icons(clock); }
 .brand-icons-googleplus { @include brand-icons(googleplus); }
+.brand-icons-home { @include brand-icons(home); }

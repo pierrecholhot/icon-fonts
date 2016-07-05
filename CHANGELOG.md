@@ -1,5 +1,15 @@
+<a name="0.0.46"></a>
+## [0.0.46](https://github.com/pierrecholhot/icon-fonts/compare/0.0.45...v0.0.46) (2016-07-05)
+
+
+
 <a name="0.0.45"></a>
-## [0.0.45](https://github.com/pierrecholhot/icon-fonts/compare/0.0.44...v0.0.45) (2016-07-05)
+## [0.0.45](https://github.com/pierrecholhot/icon-fonts/compare/0.0.44...0.0.45) (2016-07-05)
+
+
+### Features
+
+* **icons:** googleplus.svg ([3e705fe](https://github.com/pierrecholhot/icon-fonts/commit/3e705fe))
 
 
 
