@@ -1,3 +1,13 @@
+<a name="0.0.88"></a>
+## [0.0.88](https://github.com/pierrecholhot/icon-fonts/compare/0.0.87...0.0.88) (2016-07-05)
+
+
+### Features
+
+* **icons:** btn-plus.svg, bulb.svg, bulle-alert.svg, bulle-entreprise.svg, bulle.svg, bulles.svg, calculator.svg ([57ae8b8](https://github.com/pierrecholhot/icon-fonts/commit/57ae8b8))
+
+
+
 <a name="0.0.87"></a>
 ## [0.0.87](https://github.com/pierrecholhot/icon-fonts/compare/0.0.86...0.0.87) (2016-07-05)
 

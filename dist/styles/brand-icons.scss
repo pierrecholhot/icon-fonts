@@ -23,11 +23,6 @@
 	@if $filename == btn-plus { $char: "\EA05"; }
 	@if $filename == bulb { $char: "\EA06"; }
 	@if $filename == bulle-alert { $char: "\EA07"; }
-	@if $filename == bulle-entreprise { $char: "\EA08"; }
-	@if $filename == bulle { $char: "\EA09"; }
-	@if $filename == bulles { $char: "\EA0A"; }
-	@if $filename == calculator { $char: "\EA0B"; }
-	@if $filename == calendar { $char: "\EA0C"; }
 	@return $char;
 }
 
@@ -49,8 +44,3 @@
 .brand-icons-btn-plus { @include brand-icons(btn-plus); }
 .brand-icons-bulb { @include brand-icons(bulb); }
 .brand-icons-bulle-alert { @include brand-icons(bulle-alert); }
-.brand-icons-bulle-entreprise { @include brand-icons(bulle-entreprise); }
-.brand-icons-bulle { @include brand-icons(bulle); }
-.brand-icons-bulles { @include brand-icons(bulles); }
-.brand-icons-calculator { @include brand-icons(calculator); }
-.brand-icons-calendar { @include brand-icons(calendar); }

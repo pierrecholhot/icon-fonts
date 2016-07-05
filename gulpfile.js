@@ -139,7 +139,9 @@ function createNewTag(callback) {
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
     if (error) { return callback(error); }
-    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, callback);
+    git.push(config.git.upstream, config.git.branch, { args: '--tags' }, function(){
+      setTimeout(callback, 10000);
+    });
   });
 }
 
