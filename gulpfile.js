@@ -12,6 +12,10 @@ var as = require('async');
 var ms = require('minimist');
 var rs = require('run-sequence');
 var sf = require('staged-files');
+var xc = require('child_process').exec;
+
+var newIcons = [];
+var cmdStagedFiles = 'git diff --name-only --staged';
 
 var config = Object.freeze({
   fontName: 'brand-icons',
@@ -91,17 +95,13 @@ function addChanges() {
 }
 
 function storeChanges(callback) {
-  var exec = require('child_process').exec;
-  var cmd = 'git diff --name-only --staged';
-  exec(cmd, function(error, stdout, stderr) {
-    var data = stdout.split('\n');
-    for (var i = 0; i < data.length; i++) {
-      var line = data[i];
-      if(line.indexOf('dist') === -1){
-        console.log(line);
+  xc(cmdStagedFiles, function(error, stdout, stderr) {
+    var x, data = stdout.split('\n');
+    while(x = data.pop()){
+      if (x.split('.').pop() === 'svg') {
+        newIcons.push(x);
       }
     }
-    console.log();
     callback();
   });
 }
