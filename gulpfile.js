@@ -15,6 +15,12 @@ var async = require('async');
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
 
+var changedFiles = {
+  added: [],
+  removed: [],
+  updated: []
+};
+
 var newIcons = [];
 
 var config = Object.freeze({
@@ -95,7 +101,6 @@ function bumpVersion() {
 
 function changelog() {
   return gulp.src('CHANGELOG.md', { buffer: false })
-    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 0 }))
     .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 0 }))
     .pipe(gulp.dest('./'));
 }
