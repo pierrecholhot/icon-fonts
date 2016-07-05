@@ -94,7 +94,7 @@ function storeChanges(callback) {
   var exec = require('child_process').exec;
   var cmd = 'git status';
   exec(cmd, function(error, stdout, stderr) {
-    console.log(stdout);
+    console.log(stdout.split('\n'));
     callback();
   });
 }
