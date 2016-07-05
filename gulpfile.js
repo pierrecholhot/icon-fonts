@@ -86,9 +86,12 @@ function bumpVersion() {
     .pipe(gulp.dest('./'));
 }
 
-function addChanges(callback) {
-  return gulp.src('.')
-    .pipe(git.add())
+function addChanges() {
+  return gulp.src('.').pipe(git.add());
+}
+
+function storeChanges() {
+  console.log(sf());
 }
 
 function commitChanges() {
@@ -119,6 +122,7 @@ function addIcons(callback) {
     'ಠ_ಠ___make-fonts',
     'ಠ_ಠ___bump-version',
     'ಠ_ಠ___add-changes',
+    'ಠ_ಠ___store-changes',
     'ಠ_ಠ___commit-changes',
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
@@ -133,6 +137,7 @@ gulp.task('ಠ_ಠ___clean-dist', cleanDist);
 gulp.task('ಠ_ಠ___make-fonts', makeFonts);
 gulp.task('ಠ_ಠ___bump-version', bumpVersion);
 gulp.task('ಠ_ಠ___add-changes', addChanges);
+gulp.task('ಠ_ಠ___store-changes', storeChanges);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
 gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
