@@ -1,12 +1,13 @@
 {
   "name": "font-icons-repo",
-  "version": "0.0.75",
+  "version": "0.0.76",
   "description": "Font icons repo",
   "main": "gulpfile.js",
   "private": true,
   "author": "Pierre Cholhot",
   "license": "ISC",
   "devDependencies": {
+    "conventional-changelog": "^1.1.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-bump": "^2.2.0",

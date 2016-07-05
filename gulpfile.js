@@ -6,7 +6,7 @@ var bump = require('gulp-bump');
 var rename = require('gulp-rename');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
-var conventionalChangelog = require('gulp-conventional-changelog');
+var conventionalChangelog = require('conventional-changelog');
 
 var _ = require('lodash');
 var fs = require('fs');
@@ -100,9 +100,8 @@ function bumpVersion() {
 }
 
 function changelog() {
-  return gulp.src('CHANGELOG.md', { buffer: false })
-    .pipe(conventionalChangelog({ preset: 'angular', releaseCount: 50 }))
-    .pipe(gulp.dest('./'));
+  return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
+    .pipe(fs.createWriteStream('./CHANGELOG.md'));
 }
 
 function addChanges() {
