@@ -21,6 +21,7 @@
 	@if $filename == arrow-right { $char: "\EA03"; }
 	@if $filename == arrow-up { $char: "\EA04"; }
 	@if $filename == bulb { $char: "\EA05"; }
+	@if $filename == bulle { $char: "\EA06"; }
 	@return $char;
 }
 
@@ -40,3 +41,4 @@
 .brand-icons-arrow-right { @include brand-icons(arrow-right); }
 .brand-icons-arrow-up { @include brand-icons(arrow-up); }
 .brand-icons-bulb { @include brand-icons(bulb); }
+.brand-icons-bulle { @include brand-icons(bulle); }
