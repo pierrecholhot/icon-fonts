@@ -140,7 +140,11 @@ function createNewTag(callback) {
 
 function makeChangelog() {
   return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
-    .pipe(fs.createWriteStream('./CHANGELOG.md'))
+    .pipe(fs.createWriteStream('./CHANGELOG.md'));
+}
+
+function pushChangelog(callback) {
+  return gulp.src('./CHANGELOG.md')
     .pipe(git.add())
     .pipe(git.commit('chore(changelog)'))
     .pipe(git.push(config.git.upstream, config.git.branch, callback));
@@ -161,6 +165,7 @@ function addIcons(callback) {
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
     'ಠ_ಠ___make-changelog',
+    'ಠ_ಠ___push-changelog',
     function (error) {
       console.log(error ? error.message : config.success);
       callback(error);
@@ -177,6 +182,7 @@ gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
 gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
 gulp.task('ಠ_ಠ___make-changelog', makeChangelog);
+gulp.task('ಠ_ಠ___push-changelog', pushChangelog);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);
