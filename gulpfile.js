@@ -91,7 +91,10 @@ function addChanges() {
 }
 
 function storeChanges() {
-  console.log(sf());
+  sf().on('finish', function(a,b,c){
+    console.log(a,b,c);
+  })
+  // console.log();
 }
 
 function commitChanges() {
