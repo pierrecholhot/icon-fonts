@@ -1,5 +1,20 @@
+<a name="Unreleased"></a>
+# Unreleased (2016-07-05)
+
+
+
+<a name="0.0.84"></a>
+## [0.0.84](https://github.com/pierrecholhot/icon-fonts/compare/0.0.83...0.0.84) (2016-07-05)
+
+
+### Features
+
+* **icons:** automateaffranchissement.svg, book.svg, box.svg, brand.svg, bulles.svg, calculator.svg ([7b07aa4](https://github.com/pierrecholhot/icon-fonts/commit/7b07aa4))
+
+
+
 <a name="0.0.83"></a>
-## [0.0.83](https://github.com/pierrecholhot/icon-fonts/compare/0.0.82...v0.0.83) (2016-07-05)
+## [0.0.83](https://github.com/pierrecholhot/icon-fonts/compare/0.0.82...0.0.83) (2016-07-05)
 
 
 
