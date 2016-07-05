@@ -29,7 +29,7 @@ var config = Object.freeze({
   fontPathFromStyles: '../fonts/',
   success: 'Release finished successfully',
   bump: {
-    files: ['./bower.json', './package.json'],
+    files: './package.json',
     allowed: ['patch', 'minor', 'major']
   },
   git: {
