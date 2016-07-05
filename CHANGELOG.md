@@ -1,3 +1,13 @@
+<a name="0.0.87"></a>
+## [0.0.87](https://github.com/pierrecholhot/icon-fonts/compare/0.0.86...0.0.87) (2016-07-05)
+
+
+### Features
+
+* **icons:** calendar.svg ([8dd8b58](https://github.com/pierrecholhot/icon-fonts/commit/8dd8b58))
+
+
+
 <a name="0.0.86"></a>
 ## [0.0.86](https://github.com/pierrecholhot/icon-fonts/compare/0.0.85...0.0.86) (2016-07-05)
 
