@@ -99,11 +99,6 @@ function bumpVersion() {
     .pipe(gulp.dest('./'));
 }
 
-function changelog() {
-  return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
-    .pipe(fs.createWriteStream('./CHANGELOG.md'));
-}
-
 function addChanges() {
   return gulp.src('.').pipe(git.add());
 }
@@ -143,6 +138,14 @@ function createNewTag(callback) {
   });
 }
 
+function makeChangelog() {
+  return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
+    .pipe(fs.createWriteStream('./CHANGELOG.md'))
+    .pipe(git.add())
+    .pipe(git.commit('chore(changelog)'))
+    .pipe(git.push(config.git.upstream, config.git.branch, callback));
+}
+
 function readMe() {
   console.log(fs.readFileSync('README.md', 'utf8'));
 }
@@ -157,10 +160,7 @@ function addIcons(callback) {
     'ಠ_ಠ___commit-changes',
     'ಠ_ಠ___push-changes',
     'ಠ_ಠ___create-new-tag',
-    'ಠ_ಠ___changelog',
-    'ಠ_ಠ___add-changes',
-    'ಠ_ಠ___commit-changes',
-    'ಠ_ಠ___push-changes',
+    'ಠ_ಠ___make-changelog',
     function (error) {
       console.log(error ? error.message : config.success);
       callback(error);
@@ -176,7 +176,7 @@ gulp.task('ಠ_ಠ___store-changes', storeChanges);
 gulp.task('ಠ_ಠ___commit-changes', commitChanges);
 gulp.task('ಠ_ಠ___push-changes', pushChanges);
 gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
-gulp.task('ಠ_ಠ___changelog', changelog);
+gulp.task('ಠ_ಠ___make-changelog', makeChangelog);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);
