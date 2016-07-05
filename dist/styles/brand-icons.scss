@@ -23,8 +23,8 @@
 	@if $filename == bulles { $char: "\EA05"; }
 	@if $filename == calculator { $char: "\EA06"; }
 	@if $filename == calendar { $char: "\EA07"; }
-	@if $filename == cartable { $char: "\EA08"; }
-	@if $filename == check { $char: "\EA09"; }
+	@if $filename == client { $char: "\EA08"; }
+	@if $filename == clock { $char: "\EA09"; }
 	@return $char;
 }
 
@@ -46,5 +46,5 @@
 .brand-icons-bulles { @include brand-icons(bulles); }
 .brand-icons-calculator { @include brand-icons(calculator); }
 .brand-icons-calendar { @include brand-icons(calendar); }
-.brand-icons-cartable { @include brand-icons(cartable); }
-.brand-icons-check { @include brand-icons(check); }
+.brand-icons-client { @include brand-icons(client); }
+.brand-icons-clock { @include brand-icons(clock); }

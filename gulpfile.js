@@ -29,7 +29,7 @@ var config = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    staged: 'git status --porcelain',
+    staged: 'git diff --name-only --staged',
     newIconsCommitMessage: 'feat(icons): <%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
@@ -105,22 +105,12 @@ function addChanges() {
 
 function storeChanges(callback) {
   exec(config.git.staged, function(error, stdout, stderr) {
-    var modes = ['AM', 'AD', 'A', 'M', 'C', 'D', 'R', 'U'];
-    var template = new RegExp(`^(${modes.join('|')})\\s{1,2}(\\S+)`);
-    var results = stdout.split('\n').map(function(str) {
-        return str.trim().match(template);
-    }).filter(function(matched) {
-        return !!matched;
-    }).map(function(matched) {
-        return matched[2];
-    });
-    console.log(results);
-    // var x, data = stdout.split('\n');
-    // for (var i = 0; i < data.length; i++) {
-    //   if (data[i].indexOf('src/svg/') === 0) {
-    //     newIcons.push(data[i].split('/').pop());
-    //   }
-    // }
+    var data = stdout.split('\n');
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].indexOf('src/svg/') === 0) {
+        newIcons.push(data[i].split('/').pop());
+      }
+    }
     callback();
   });
 }
