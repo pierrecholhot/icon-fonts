@@ -29,7 +29,7 @@ var config = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    staged: 'git diff --name-only --staged',
+    staged: 'git status --porcelain',
     newIconsCommitMessage: 'feat(icons): <%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
