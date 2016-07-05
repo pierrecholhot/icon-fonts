@@ -30,7 +30,7 @@ var config = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    newIconsCommitMessage: 'feat(icons): Add new icons',
+    newIconsCommitMessage: 'feat(icons): Add new icons\n\n<%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
   src: {
@@ -117,13 +117,13 @@ function storeChanges(callback) {
 }
 
 function commitChanges() {
+  var message = config.git.defaultCommitMessage;
   if (newIcons.length) {
-    return gulp.src('.')
-      .pipe(git.commit([config.git.newIconsCommitMessage, newIcons.join('\n')]));
-  } else {
-    return gulp.src('.')
-      .pipe(git.commit(config.git.defaultCommitMessage));
+    message = _.template(config.git.newIconsCommitMessage)({
+      icons: newIcons.join('\n')
+    });
   }
+  return gulp.src('.').pipe(git.commit(message));
 }
 
 function pushChanges(callback) {
