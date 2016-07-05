@@ -1,5 +1,15 @@
+<a name="0.0.83"></a>
+## [0.0.83](https://github.com/pierrecholhot/icon-fonts/compare/0.0.82...v0.0.83) (2016-07-05)
+
+
+
 <a name="0.0.82"></a>
-## [0.0.82](https://github.com/pierrecholhot/icon-fonts/compare/0.0.81...v0.0.82) (2016-07-05)
+## [0.0.82](https://github.com/pierrecholhot/icon-fonts/compare/0.0.81...0.0.82) (2016-07-05)
+
+
+### Features
+
+* **icons:** automateaffranchissement.svg, book.svg, box.svg, brand.svg ([554b8f0](https://github.com/pierrecholhot/icon-fonts/commit/554b8f0))
 
 
 
