@@ -1,5 +1,5 @@
-<a name="Unreleased"></a>
-# Unreleased (2016-07-05)
+<a name="0.0.86"></a>
+## [0.0.86](https://github.com/pierrecholhot/icon-fonts/compare/0.0.85...0.0.86) (2016-07-05)
 
 
 
