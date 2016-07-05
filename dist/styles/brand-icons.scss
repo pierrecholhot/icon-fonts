@@ -22,7 +22,6 @@
 	@if $filename == arrow-up { $char: "\EA04"; }
 	@if $filename == bulles { $char: "\EA05"; }
 	@if $filename == calculator { $char: "\EA06"; }
-	@if $filename == clock { $char: "\EA07"; }
 	@return $char;
 }
 
@@ -43,4 +42,3 @@
 .brand-icons-arrow-up { @include brand-icons(arrow-up); }
 .brand-icons-bulles { @include brand-icons(bulles); }
 .brand-icons-calculator { @include brand-icons(calculator); }
-.brand-icons-clock { @include brand-icons(clock); }
