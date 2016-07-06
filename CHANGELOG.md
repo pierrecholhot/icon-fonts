@@ -1,3 +1,13 @@
+<a name="0.0.154"></a>
+## [0.0.154](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.0.153...0.0.154) (2016-07-06)
+
+
+### Features
+
+* **icons:** user-bubble.svg ([bfae0f8](https://github.com/pierrecholhot/font-icons-starter-kit/commit/bfae0f8))
+
+
+
 <a name="0.0.153"></a>
 ## [0.0.153](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.0.152...0.0.153) (2016-07-06)
 
