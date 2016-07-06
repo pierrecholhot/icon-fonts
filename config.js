@@ -9,9 +9,9 @@ module.exports = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    tagCommitMessage: 'Created tag for version: <%= version %>',
-    modifiedIconsCommitMessage: 'feat(icons): <%= icons %>',
-    defaultCommitMessage: 'chore(update): Automated build'
+    defaultCommitMessage: 'chore(update): Automated build',
+    changedIconsCommitMessage: 'feat(icons): <%= icons %>',
+    tagCommitMessage: 'Created tag for version: <%= version %>'
   },
   src: {
     svg: './src/svg/*.svg',
