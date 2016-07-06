@@ -59,7 +59,8 @@ function makeFonts(callback) {
 
   iconStream = gulp.src(config.src.svg).pipe(iconfont({
     fontName: config.fontName,
-    formats: config.fontFormats
+    formats: config.fontFormats,
+    normalize: true
   }));
 
   handleGlyphs = function (done) {
