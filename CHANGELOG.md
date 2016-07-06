@@ -1,3 +1,8 @@
+<a name="0.0.157"></a>
+## [0.0.157](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.0.156...0.0.157) (2016-07-06)
+
+
+
 <a name="0.0.156"></a>
 ## [0.0.156](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.0.155...0.0.156) (2016-07-06)
 
