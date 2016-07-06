@@ -41,7 +41,7 @@ var config = Object.freeze({
   },
   src: {
     svg: './src/svg/*.svg',
-    templates: './src/templates/'
+    templates: './src/templates/**/*.*'
   },
   dist: {
     root: './dist',
@@ -64,7 +64,7 @@ function makeFonts(callback) {
 
   handleGlyphs = function (done) {
     iconStream.on('glyphs', function (glyphs, options) {
-      gulp.src(config.src.templates + '**/*.*')
+      gulp.src(config.src.templates)
         .pipe(consolidate('lodash', {
           glyphs: glyphs,
           fontName: config.fontName,

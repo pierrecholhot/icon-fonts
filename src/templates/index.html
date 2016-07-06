@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="/styles/font-face.css" />
+		<link rel="stylesheet" href="/styles/icons.css" />
+		<style>
+			html, body { padding: 0; margin: 0; background: #cecece; }
+			div { margin-bottom: 30px; }
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<% _.each(glyphs, function(glyph) { %>
+			<div>
+				<span class="brand-icons brand-icons-<%= glyph.name %>"></span>
+			</div>
+		<% }); %>
+	</body>
+</html>
