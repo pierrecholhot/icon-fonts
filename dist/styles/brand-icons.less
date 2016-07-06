@@ -1,94 +1,94 @@
 .brand-icons-base-pseudo {
-	font-family: "brand-icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	speak: none;
-	text-decoration: none;
-	text-transform: none;
+  font-family: "brand-icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .brand-icons-char(@filename) {
-	@arrow-down: "\EA01";
-	@arrow-left: "\EA02";
-	@arrow-right: "\EA03";
-	@arrow-up: "\EA04";
-	@btn-plus: "\EA05";
-	@bulb: "\EA06";
-	@bulle-alert: "\EA07";
-	@bulle-entreprise: "\EA08";
-	@bulle: "\EA09";
-	@bulles: "\EA0A";
-	@calculator: "\EA0B";
-	@calendar: "\EA0C";
-	@suplier: "\EA0D";
-	@tel: "\EA0E";
-	@tool: "\EA0F";
-	@track: "\EA10";
-	@trash-thick: "\EA11";
-	
-	content: @@filename;
+  @arrow-down: "\EA01";
+  @arrow-left: "\EA02";
+  @arrow-right: "\EA03";
+  @arrow-up: "\EA04";
+  @btn-plus: "\EA05";
+  @bulb: "\EA06";
+  @bulle-alert: "\EA07";
+  @bulle-entreprise: "\EA08";
+  @bulle: "\EA09";
+  @bulles: "\EA0A";
+  @calculator: "\EA0B";
+  @calendar: "\EA0C";
+  @suplier: "\EA0D";
+  @tel: "\EA0E";
+  @tool: "\EA0F";
+  @track: "\EA10";
+  @trash-thick: "\EA11";
+  
+  content: @@filename;
 }
 
 .brand-icons(@filename, @insert: before) {
-	@pseudo-selector: ~":@{insert}";
+  @pseudo-selector: ~":@{insert}";
 
-	&@{pseudo-selector} {
-		&:extend(.brand-icons-base-pseudo);
-		.brand-icons-char(@filename);
-	}
+  &@{pseudo-selector} {
+    &:extend(.brand-icons-base-pseudo);
+    .brand-icons-char(@filename);
+  }
 }
 
 .brand-icons-arrow-down {
-	.brand-icons(arrow-down);
+  .brand-icons(arrow-down);
 }
 .brand-icons-arrow-left {
-	.brand-icons(arrow-left);
+  .brand-icons(arrow-left);
 }
 .brand-icons-arrow-right {
-	.brand-icons(arrow-right);
+  .brand-icons(arrow-right);
 }
 .brand-icons-arrow-up {
-	.brand-icons(arrow-up);
+  .brand-icons(arrow-up);
 }
 .brand-icons-btn-plus {
-	.brand-icons(btn-plus);
+  .brand-icons(btn-plus);
 }
 .brand-icons-bulb {
-	.brand-icons(bulb);
+  .brand-icons(bulb);
 }
 .brand-icons-bulle-alert {
-	.brand-icons(bulle-alert);
+  .brand-icons(bulle-alert);
 }
 .brand-icons-bulle-entreprise {
-	.brand-icons(bulle-entreprise);
+  .brand-icons(bulle-entreprise);
 }
 .brand-icons-bulle {
-	.brand-icons(bulle);
+  .brand-icons(bulle);
 }
 .brand-icons-bulles {
-	.brand-icons(bulles);
+  .brand-icons(bulles);
 }
 .brand-icons-calculator {
-	.brand-icons(calculator);
+  .brand-icons(calculator);
 }
 .brand-icons-calendar {
-	.brand-icons(calendar);
+  .brand-icons(calendar);
 }
 .brand-icons-suplier {
-	.brand-icons(suplier);
+  .brand-icons(suplier);
 }
 .brand-icons-tel {
-	.brand-icons(tel);
+  .brand-icons(tel);
 }
 .brand-icons-tool {
-	.brand-icons(tool);
+  .brand-icons(tool);
 }
 .brand-icons-track {
-	.brand-icons(track);
+  .brand-icons(track);
 }
 .brand-icons-trash-thick {
-	.brand-icons(trash-thick);
+  .brand-icons(trash-thick);
 }

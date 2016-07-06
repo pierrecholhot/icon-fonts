@@ -1,13 +1,13 @@
 .<%= cssClass %>:before {
-	font-family: "<%= fontName %>";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	speak: none;
-	text-decoration: none;
-	text-transform: none;
+  font-family: "<%= fontName %>";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
 }
 <% _.each(glyphs, function(glyph) { %>
 .<%= cssClass %>-<%= glyph.name %>:before { content: "\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %>"; } <% }); %>

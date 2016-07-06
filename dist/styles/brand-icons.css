@@ -1,13 +1,13 @@
 .brand-icons:before {
-	font-family: "brand-icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	speak: none;
-	text-decoration: none;
-	text-transform: none;
+  font-family: "brand-icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .brand-icons-arrow-down:before { content: "\EA01"; } 

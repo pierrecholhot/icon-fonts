@@ -1,50 +1,50 @@
 @mixin brand-icons-styles {
-	font-family: "brand-icons";
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	speak: none;
-	text-decoration: none;
-	text-transform: none;
+  font-family: "brand-icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: none;
+  text-transform: none;
 }
 
 %brand-icons {
-	@include brand-icons-styles;
+  @include brand-icons-styles;
 }
 
 @function brand-icons-char($filename) {
-	$char: ""; 
-	@if $filename == arrow-down { $char: "\EA01"; }
-	@if $filename == arrow-left { $char: "\EA02"; }
-	@if $filename == arrow-right { $char: "\EA03"; }
-	@if $filename == arrow-up { $char: "\EA04"; }
-	@if $filename == btn-plus { $char: "\EA05"; }
-	@if $filename == bulb { $char: "\EA06"; }
-	@if $filename == bulle-alert { $char: "\EA07"; }
-	@if $filename == bulle-entreprise { $char: "\EA08"; }
-	@if $filename == bulle { $char: "\EA09"; }
-	@if $filename == bulles { $char: "\EA0A"; }
-	@if $filename == calculator { $char: "\EA0B"; }
-	@if $filename == calendar { $char: "\EA0C"; }
-	@if $filename == suplier { $char: "\EA0D"; }
-	@if $filename == tel { $char: "\EA0E"; }
-	@if $filename == tool { $char: "\EA0F"; }
-	@if $filename == track { $char: "\EA10"; }
-	@if $filename == trash-thick { $char: "\EA11"; }
-	@return $char;
+  $char: ""; 
+  @if $filename == arrow-down { $char: "\EA01"; }
+  @if $filename == arrow-left { $char: "\EA02"; }
+  @if $filename == arrow-right { $char: "\EA03"; }
+  @if $filename == arrow-up { $char: "\EA04"; }
+  @if $filename == btn-plus { $char: "\EA05"; }
+  @if $filename == bulb { $char: "\EA06"; }
+  @if $filename == bulle-alert { $char: "\EA07"; }
+  @if $filename == bulle-entreprise { $char: "\EA08"; }
+  @if $filename == bulle { $char: "\EA09"; }
+  @if $filename == bulles { $char: "\EA0A"; }
+  @if $filename == calculator { $char: "\EA0B"; }
+  @if $filename == calendar { $char: "\EA0C"; }
+  @if $filename == suplier { $char: "\EA0D"; }
+  @if $filename == tel { $char: "\EA0E"; }
+  @if $filename == tool { $char: "\EA0F"; }
+  @if $filename == track { $char: "\EA10"; }
+  @if $filename == trash-thick { $char: "\EA11"; }
+  @return $char;
 }
 
 @mixin brand-icons($filename, $insert: before, $extend: true) {
-	&:#{$insert} {
-		@if $extend {
-			@extend %brand-icons;
-		} @else {
-			@include brand-icons-styles;
-		}
-		content: brand-icons-char($filename);
-	}
+  &:#{$insert} {
+    @if $extend {
+      @extend %brand-icons;
+    } @else {
+      @include brand-icons-styles;
+    }
+    content: brand-icons-char($filename);
+  }
 }
 
 .brand-icons-arrow-down { @include brand-icons(arrow-down); }
