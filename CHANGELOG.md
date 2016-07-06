@@ -1,3 +1,8 @@
+<a name="0.0.115"></a>
+## [0.0.115](https://github.com/pierrecholhot/icon-fonts/compare/0.0.114...0.0.115) (2016-07-06)
+
+
+
 <a name="0.0.114"></a>
 ## [0.0.114](https://github.com/pierrecholhot/icon-fonts/compare/0.0.113...0.0.114) (2016-07-06)
 
