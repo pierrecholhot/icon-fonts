@@ -32,7 +32,4 @@ Save your file as SVG with the following settings:
 	- Decimal Places: 1
 	- Encoding: UTF-8
 	- Output fewer elements: check
-
-Leave the rest unchecked.
-
-More in-depth information: http://www.adobe.com/inspire/2013/09/exporting-svg-illustrator.html
+	- Leave the rest unchecked.
