@@ -9,7 +9,8 @@ Host your project's font-icons in a separate repository to avoid having to DIFF 
 
 - Install your fork using `bower` into your project (append the tag/version at the end of URL)  
 
-		bower install https://github.com/<YOU>/<YOUR-FORK>.git#0.0.2
+		cd my-work-project
+		bower install --save https://github.com/<YOU>/<YOUR-FORK>.git#0.0.2
 
 - Import the preferred `scss/less/css` files from `bower_components`  
 
