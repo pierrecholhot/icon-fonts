@@ -6,18 +6,20 @@
 		<link rel="stylesheet" href="styles/brand-icons.css" />
 		<style>
 			html, body { padding: 0; margin: 0; background: #cecece; }
-			body { display: flex; }
-			div { margin-bottom: 30px; flex: 1; }
 			h1 { text-align: center; }
+			section { display: flex; }
+			div { margin-bottom: 30px; flex: 1; }
 		</style>
 		<title><%= fontName %></title>
 	</head>
 	<body>
 		<h1><%= fontName %></h1>
-		<% _.each(glyphs, function(glyph) { %>
-			<div>
-				<span class="brand-icons brand-icons-<%= glyph.name %>"></span>
-			</div>
-		<% }); %>
+		<section>
+			<% _.each(glyphs, function(glyph) { %>
+				<div>
+					<span class="brand-icons brand-icons-<%= glyph.name %>"></span>
+				</div>
+			<% }); %>
+		</section>
 	</body>
 </html>
