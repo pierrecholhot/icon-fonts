@@ -17,3 +17,23 @@ to generate the font files and push a new tag to the remote repo.
 - copy font-files using your builder
 - optionally `@import 'font-face.css'` for the font declaration,
   otherwise you will have to declare it yourself to point towards the fonts
+
+
+#### Export SVG from Illustrator
+
+Save your file as SVG with the following settings:
+
+- SVG Profiles: SVG 1.1
+- Fonts Type: SVG
+- Fonts Subsetting: None
+- Options Image Location: Embed
+
+- Advanced Options
+	- CSS Properties: Presentation Attributes
+	- Decimal Places: 1
+	- Encoding: UTF-8
+	- Output fewer elements: check
+
+Leave the rest unchecked.
+
+More in-depth information: http://www.adobe.com/inspire/2013/09/exporting-svg-illustrator.html
