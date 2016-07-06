@@ -37,8 +37,8 @@ Save your file as SVG with the following settings:
 - `@import` the `scss/less/css` files from `bower_components`  
 	Example: `import "./bower_components/<WHATEVER-YOU-CALLED-THE-REPO>/dist/styles/brand-icons.css"`
 
-- Optionally `@import "font-face.css"` for the font declaration.  
-	Otherwise you will have to declare it yourself to point towards the fonts
+- Optionally `@import "./bower_components/<WHATEVER-YOU-CALLED-THE-REPO>/dist/styles/font-face.css"` for the font declaration.  
+	Otherwise you will have to declare it yourself to point towards the fonts in bower_components
 
 - Copy font-files using your builder  
 	Example: `gulp.src('./bower_components/<WHATEVER-YOU-CALLED-THE-REPO>/dist/fonts/*').pipe(gulp.dest('./public'))`
