@@ -1,3 +1,4 @@
+var config = require('./config');
 var gulp = require('gulp');
 
 var git = require('gulp-git');
@@ -15,24 +16,20 @@ var minimist = require('minimist');
 var runSequence = require('run-sequence');
 var conventionalChangelog = require('conventional-changelog');
 
-var config = require('./config');
-
-var modifiedIcons = [];
+var changedIcons = [];
 
 function cleanDist(callback) {
   return require('del')(config.dist.root, callback);
 }
 
 function generateFonts(callback) {
-  var iconStream, handleGlyphs, handleFonts;
-
-  iconStream = gulp.src(config.src.svg).pipe(iconfont({
+  var iconStream = gulp.src(config.src.svg).pipe(iconfont({
     fontName: config.fontName,
     formats: config.fontFormats,
     normalize: true
   }));
 
-  handleGlyphs = function (done) {
+  var handleGlyphs = function (done) {
     iconStream.on('glyphs', function (glyphs, options) {
       gulp.src(config.src.templates)
         .pipe(consolidate('lodash', {
@@ -49,7 +46,7 @@ function generateFonts(callback) {
     });
   };
 
-  handleFonts = function (done) {
+  var handleFonts = function (done) {
     iconStream.pipe(gulp.dest(config.dist.fonts)).on('finish', done);
   };
 
@@ -76,7 +73,7 @@ function storeChanges(callback) {
     var data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
       if (data[i].indexOf('src/svg/') === 0) {
-        modifiedIcons.push(data[i].split('/').pop());
+        changedIcons.push(data[i].split('/').pop());
       }
     }
     callback();
@@ -85,9 +82,9 @@ function storeChanges(callback) {
 
 function commitChanges() {
   var message = config.git.defaultCommitMessage;
-  if (modifiedIcons.length) {
-    message = _.template(config.git.modifiedIconsCommitMessage)({
-      icons: modifiedIcons.join(', ')
+  if (changedIcons.length) {
+    message = _.template(config.git.changedIconsCommitMessage)({
+      icons: changedIcons.join(', ')
     });
   }
   return gulp.src('.').pipe(git.commit(message));
@@ -139,12 +136,11 @@ function addIcons(callback) {
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      var message = _.template(config.done.join('\n'))({
+      console.log(_.template(config.done.join('\n'))({
         fontName: config.fontName,
         version: parseVersion(),
         message: error ? error.message : 'Release finished successfully!'
-      });
-      console.log(message);
+      }));
       callback(error);
     }
   );
