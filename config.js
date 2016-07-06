@@ -2,7 +2,7 @@ module.exports = Object.freeze({
   fontName: 'brand-icons',
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
   fontPathFromStyles: '../fonts/',
-  success: 'Release finished successfully',
+  success: '<%= fontName %> version <%= version %> release finished successfully.',
   bump: {
     files: './package.json',
     allowed: ['patch', 'minor', 'major']
@@ -10,7 +10,6 @@ module.exports = Object.freeze({
   git: {
     upstream: 'origin',
     branch: 'master',
-    staged: 'git diff --name-only --staged',
     modifiedIconsCommitMessage: 'feat(icons): <%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },

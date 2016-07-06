@@ -72,7 +72,7 @@ function addChanges() {
 }
 
 function storeChanges(callback) {
-  exec(config.git.staged, function(error, stdout, stderr) {
+  exec('git diff --name-only --staged', function(error, stdout, stderr) {
     var data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
       if (data[i].indexOf('src/svg/') === 0) {
@@ -97,8 +97,12 @@ function pushChanges(callback) {
   git.push(config.git.upstream, config.git.branch, callback);
 }
 
+function parseVersion() {
+  return JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
+}
+
 function createNewTag(callback) {
-  var version = JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
+  var version = parseVersion();
   var commitMessage = 'Created Tag for version: ' + version;
   git.tag(version, commitMessage, function (error) {
     if (error) { return callback(error); }
@@ -135,7 +139,7 @@ function addIcons(callback) {
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      console.log(error ? error.message : config.success);
+      console.log(error ? error.message: _.template(config.success)({ fontName: config.fontName, version: parseVersion() }));
       callback(error);
     }
   );
