@@ -29,14 +29,16 @@ Save your file as SVG with the following settings:
 
 ## Use this repo
 
-- Install this repository using `bower` into yours (append the tag/version at the end of URL)  
-	Example: `bower install https://github.com/pierrecholhot/font-icons-starter-kit.git#0.0.92`
+- Fork this repository
+
+- Install <YOUR-FORK> using `bower` into yours (append the tag/version at the end of URL)  
+	Example: `bower install https://github.com/<SOMEONE>/<WHATEVER-YOU-CALLED-THE-REPO>.git#0.0.92`
 
 - `@import` the `scss/less/css` files from `bower_components`  
-	Example: `import "bower_components/font-icons-starter-kit/dist/styles/brand-icons.css"`
+	Example: `import "./bower_components/<WHATEVER-YOU-CALLED-THE-REPO>/dist/styles/brand-icons.css"`
 
 - Optionally `@import "font-face.css"` for the font declaration.  
 	Otherwise you will have to declare it yourself to point towards the fonts
 
 - Copy font-files using your builder  
-	Example: `gulp.src('./bower_components/font-icons-starter-kit/dist/fonts/*').pipe(gulp.dest('./public'))`
+	Example: `gulp.src('./bower_components/<WHATEVER-YOU-CALLED-THE-REPO>/dist/fonts/*').pipe(gulp.dest('./public'))`
