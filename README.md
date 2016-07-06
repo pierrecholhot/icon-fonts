@@ -31,7 +31,7 @@ Save your file as SVG with the following settings:
 
 - Fork this repository
 
-- Install <YOUR-FORK> using `bower` into yours (append the tag/version at the end of URL)  
+- Install <YOUR-FORK> using `bower` into your project (append the tag/version at the end of URL)  
 	Example: `bower install https://github.com/<SOMEONE>/<WHATEVER-YOU-CALLED-THE-REPO>.git#0.0.92`
 
 - `@import` the `scss/less/css` files from `bower_components`  
