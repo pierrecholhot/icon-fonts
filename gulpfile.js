@@ -10,16 +10,17 @@ var consolidate = require('gulp-consolidate');
 
 var _ = require('lodash');
 var fs = require('fs');
+var del = require('del');
 var exec = require('child_process').exec;
 var async = require('async');
 var minimist = require('minimist');
+var changelog = require('conventional-changelog');
 var runSequence = require('run-sequence');
-var conventionalChangelog = require('conventional-changelog');
 
 var changedIcons = [];
 
 function cleanDist(callback) {
-  return require('del')(config.dist.root, callback);
+  return del(config.dist.root, callback);
 }
 
 function generateFonts(callback) {
@@ -107,13 +108,13 @@ function createNewTag(callback) {
   });
 }
 
-function makeChangelog() {
-  return conventionalChangelog({ preset: 'angular', releaseCount: 0 })
-    .pipe(fs.createWriteStream('./CHANGELOG.md'));
+function generateChangelog() {
+  return changelog({ preset: 'angular', releaseCount: 0 })
+    .pipe(fs.createWriteStream(config.changelog.src));
 }
 
 function commitChangelog(callback) {
-  return gulp.src('./CHANGELOG.md')
+  return gulp.src(config.changelog.src)
     .pipe(git.add())
     .pipe(git.commit('chore(changelog)'));
 }
@@ -132,7 +133,7 @@ function addIcons(callback) {
     'ಠ-commitChanges',
     'ಠ-pushChanges',
     'ಠ-createNewTag',
-    'ಠ-makeChangelog',
+    'ಠ-generateChangelog',
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
@@ -154,7 +155,7 @@ gulp.task('ಠ-storeChanges', storeChanges);
 gulp.task('ಠ-commitChanges', commitChanges);
 gulp.task('ಠ-pushChanges', pushChanges);
 gulp.task('ಠ-createNewTag', createNewTag);
-gulp.task('ಠ-makeChangelog', makeChangelog);
+gulp.task('ಠ-generateChangelog', generateChangelog);
 gulp.task('ಠ-commitChangelog', commitChangelog);
 
 gulp.task('default', readMe);

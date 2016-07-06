@@ -22,6 +22,9 @@ module.exports = Object.freeze({
     fonts: './dist/fonts',
     styles: './dist/styles'
   },
+  changelog: {
+    src: './CHANGELOG.md'
+  },
   done: [
     '', '',
     '================================================================================',
