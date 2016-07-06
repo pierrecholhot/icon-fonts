@@ -1,3 +1,13 @@
+<a name="0.0.133"></a>
+## [0.0.133](https://github.com/pierrecholhot/icon-fonts/compare/0.0.132...0.0.133) (2016-07-06)
+
+
+### Features
+
+* **icons:** tel.svg ([46daf9f](https://github.com/pierrecholhot/icon-fonts/commit/46daf9f))
+
+
+
 <a name="0.0.132"></a>
 ## [0.0.132](https://github.com/pierrecholhot/icon-fonts/compare/0.0.131...0.0.132) (2016-07-06)
 
