@@ -1,10 +1,18 @@
 {
-  "name": "font-icons-repo",
-  "version": "0.0.138",
-  "description": "Font icons repo",
+  "name": "font-icons-starter-kit",
+  "version": "0.0.139",
+  "description": "Font icons repository starter kit let's you host your project's font-icons in a separate repository to avoid having to DIFF binary files.",
   "main": "gulpfile.js",
   "private": true,
-  "author": "Pierre Cholhot",
+  "author": "Pierre Cholhot <hello@pierre.cx>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pierrecholhot/font-icons-starter-kit.git"
+	},
+	"bugs": {
+		"url": "https://github.com/pierrecholhot/font-icons-starter-kit/issues",
+		"email": "hello@pierre.cx"
+	},
   "license": "ISC",
   "devDependencies": {
     "conventional-changelog": "^1.1.0",
@@ -12,14 +20,12 @@
     "gulp": "^3.9.1",
     "gulp-bump": "^2.2.0",
     "gulp-consolidate": "^0.2.0",
-    "gulp-conventional-changelog": "^1.1.0",
     "gulp-git": "^1.8.0",
     "gulp-iconfont": "^8.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "lodash": "^4.13.1",
     "minimist": "^1.2.0",
-    "run-sequence": "^1.2.2",
-    "staged-files": "^0.1.2"
+    "run-sequence": "^1.2.2"
   }
 }
