@@ -139,7 +139,8 @@ function addIcons(callback) {
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      console.log(error ? error.message: _.template(config.success.join('\n'))({ fontName: config.fontName, version: parseVersion() }));
+      var ok = _.template(config.done.join('\n'))({ fontName: config.fontName, version: parseVersion() });
+      console.log(error.message || ok);
       callback(error);
     }
   );

@@ -21,7 +21,7 @@ module.exports = Object.freeze({
     fonts: './dist/fonts',
     styles: './dist/styles'
   },
-  success: [
+  done: [
     '', '',
     '================================================================================',
     '== Font name: <%= fontName %>',
