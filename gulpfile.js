@@ -59,7 +59,7 @@ function bumpVersion() {
   for (var i = 0; i < config.bump.allowed.length; i++) {
     if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] }
   }
-  return gulp.src(config.bump.files)
+  return gulp.src(config.bump.package)
     .pipe(bump(opts).on('error', util.log))
     .pipe(gulp.dest('./'));
 }
@@ -95,12 +95,12 @@ function pushChanges(callback) {
 }
 
 function parseVersion() {
-  return JSON.parse(fs.readFileSync('package.json', 'utf8')).version;
+  return JSON.parse(fs.readFileSync(config.bump.package, 'utf8')).version;
 }
 
 function createNewTag(callback) {
   var version = parseVersion();
-  var commitMessage = 'Created Tag for version: ' + version;
+  var commitMessage = _.template(config.git.tagCommitMessage)({ version: version });
   git.tag(version, commitMessage, function (error) {
     if (error) { return callback(error); }
     git.push(config.git.upstream, config.git.branch, { args: '--tags' }, callback);

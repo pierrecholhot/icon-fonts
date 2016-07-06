@@ -3,12 +3,13 @@ module.exports = Object.freeze({
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
   fontPathFromStyles: '../fonts/',
   bump: {
-    files: './package.json',
+    package: './package.json',
     allowed: ['patch', 'minor', 'major']
   },
   git: {
     upstream: 'origin',
     branch: 'master',
+    tagCommitMessage: 'Created tag for version: <%= version %>',
     modifiedIconsCommitMessage: 'feat(icons): <%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
