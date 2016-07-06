@@ -2,7 +2,7 @@ module.exports = Object.freeze({
   fontName: 'brand-icons',
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
   fontPathFromStyles: '../fonts/',
-  success: '<%= fontName %> version <%= version %> release finished successfully.',
+  success: ['', '', '<%= fontName %> version <%= version %> release finished successfully.', '', ''],
   bump: {
     files: './package.json',
     allowed: ['patch', 'minor', 'major']
