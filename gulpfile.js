@@ -76,7 +76,7 @@ function makeFonts(callback) {
             path.basename = config.fontName;
           }
         }))
-        .pipe(gulp.dest(config.dist.styles))
+        .pipe(gulp.dest(config.dist.root))
         .on('finish', done);
     });
   };
