@@ -15,13 +15,7 @@ var async = require('async');
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
 
-var changedFiles = {
-  added: [],
-  removed: [],
-  updated: []
-};
-
-var newIcons = [];
+var modifiedIcons = [];
 
 var config = Object.freeze({
   fontName: 'brand-icons',
@@ -36,7 +30,7 @@ var config = Object.freeze({
     upstream: 'origin',
     branch: 'master',
     staged: 'git diff --name-only --staged',
-    newIconsCommitMessage: 'feat(icons): <%= icons %>',
+    modifiedIconsCommitMessage: 'feat(icons): <%= icons %>',
     defaultCommitMessage: 'chore(update): Automated build'
   },
   src: {
@@ -109,7 +103,7 @@ function storeChanges(callback) {
     var data = stdout.split('\n');
     for (var i = 0; i < data.length; i++) {
       if (data[i].indexOf('src/svg/') === 0) {
-        newIcons.push(data[i].split('/').pop());
+        modifiedIcons.push(data[i].split('/').pop());
       }
     }
     callback();
@@ -118,9 +112,9 @@ function storeChanges(callback) {
 
 function commitChanges() {
   var message = config.git.defaultCommitMessage;
-  if (newIcons.length) {
-    message = _.template(config.git.newIconsCommitMessage)({
-      icons: newIcons.join(', ')
+  if (modifiedIcons.length) {
+    message = _.template(config.git.modifiedIconsCommitMessage)({
+      icons: modifiedIcons.join(', ')
     });
   }
   return gulp.src('.').pipe(git.commit(message));
