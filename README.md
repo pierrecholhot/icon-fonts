@@ -27,7 +27,7 @@ Save your file as SVG with the following settings:
 - Run `gulp icons` to generate the font files and CSS then push a new tag to the remote repo
 
 
-## Use this repo
+## Use this
 
 - Fork this repository
 
