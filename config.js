@@ -26,7 +26,7 @@ module.exports = Object.freeze({
     '================================================================================',
     '== Font name: <%= fontName %>',
     '== Font version: <%= version %>',
-    '== Status: Release finished successfully',
+    '== Status: <%= message %>',
     '================================================================================',
     '', ''
   ]

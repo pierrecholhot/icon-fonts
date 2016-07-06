@@ -139,11 +139,12 @@ function addIcons(callback) {
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      var success = _.template(config.done.join('\n'))({
+      var message = _.template(config.done.join('\n'))({
         fontName: config.fontName,
-        version: parseVersion()
+        version: parseVersion(),
+        message: error ? error.message : 'Release finished successfully!'
       });
-      console.log(error ? error.message : success);
+      console.log(message);
       callback(error);
     }
   );
