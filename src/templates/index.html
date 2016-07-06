@@ -19,7 +19,7 @@
 		<section>
 			<% _.each(glyphs, function(glyph) { %>
 				<div>
-					<span class="brand-icons brand-icons-<%= glyph.name %>"></span>
+					<span class="<%= cssClass %> <%= cssClass %>-<%= glyph.name %>"></span>
 					<input type="text" value="<%= glyph.name %>" readonly="" />
 				</div>
 			<% }); %>

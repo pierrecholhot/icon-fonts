@@ -6,7 +6,6 @@ var bump = require('gulp-bump');
 var rename = require('gulp-rename');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
-var conventionalChangelog = require('conventional-changelog');
 
 var _ = require('lodash');
 var fs = require('fs');
@@ -14,6 +13,7 @@ var exec = require('child_process').exec;
 var async = require('async');
 var minimist = require('minimist');
 var runSequence = require('run-sequence');
+var conventionalChangelog = require('conventional-changelog');
 
 var modifiedIcons = [];
 
@@ -48,7 +48,7 @@ function cleanDist(callback) {
   return require('del')(config.dist.root, callback);
 }
 
-function makeFonts(callback) {
+function generateFonts(callback) {
   var iconStream, handleGlyphs, handleFonts;
 
   iconStream = gulp.src(config.src.svg).pipe(iconfont({
@@ -67,9 +67,7 @@ function makeFonts(callback) {
           cssClass: config.fontName
         }))
         .pipe(rename(function (path) {
-          if (path.basename !== 'font-face' && path.basename !== 'index') {
-            path.basename = config.fontName;
-          }
+          if (path.basename === 'icons') { path.basename = config.fontName; }
         }))
         .pipe(gulp.dest(config.dist.root))
         .on('finish', done);
@@ -150,17 +148,17 @@ function readMe() {
 
 function addIcons(callback) {
   runSequence(
-    'ಠ_ಠ___clean-dist',
-    'ಠ_ಠ___make-fonts',
-    'ಠ_ಠ___bump-version',
-    'ಠ_ಠ___add-changes',
-    'ಠ_ಠ___store-changes',
-    'ಠ_ಠ___commit-changes',
-    'ಠ_ಠ___push-changes',
-    'ಠ_ಠ___create-new-tag',
-    'ಠ_ಠ___make-changelog',
-    'ಠ_ಠ___commit-changelog',
-    'ಠ_ಠ___push-changes',
+    'ಠ-cleanDist',
+    'ಠ-generateFonts',
+    'ಠ-bumpVersion',
+    'ಠ-addChanges',
+    'ಠ-storeChanges',
+    'ಠ-commitChanges',
+    'ಠ-pushChanges',
+    'ಠ-createNewTag',
+    'ಠ-makeChangelog',
+    'ಠ-commitChangelog',
+    'ಠ-pushChanges',
     function (error) {
       console.log(error ? error.message : config.success);
       callback(error);
@@ -168,16 +166,16 @@ function addIcons(callback) {
   );
 }
 
-gulp.task('ಠ_ಠ___clean-dist', cleanDist);
-gulp.task('ಠ_ಠ___make-fonts', makeFonts);
-gulp.task('ಠ_ಠ___bump-version', bumpVersion);
-gulp.task('ಠ_ಠ___add-changes', addChanges);
-gulp.task('ಠ_ಠ___store-changes', storeChanges);
-gulp.task('ಠ_ಠ___commit-changes', commitChanges);
-gulp.task('ಠ_ಠ___push-changes', pushChanges);
-gulp.task('ಠ_ಠ___create-new-tag', createNewTag);
-gulp.task('ಠ_ಠ___make-changelog', makeChangelog);
-gulp.task('ಠ_ಠ___commit-changelog', commitChangelog);
+gulp.task('ಠ-cleanDist', cleanDist);
+gulp.task('ಠ-generateFonts', generateFonts);
+gulp.task('ಠ-bumpVersion', bumpVersion);
+gulp.task('ಠ-addChanges', addChanges);
+gulp.task('ಠ-storeChanges', storeChanges);
+gulp.task('ಠ-commitChanges', commitChanges);
+gulp.task('ಠ-pushChanges', pushChanges);
+gulp.task('ಠ-createNewTag', createNewTag);
+gulp.task('ಠ-makeChangelog', makeChangelog);
+gulp.task('ಠ-commitChangelog', commitChangelog);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);
