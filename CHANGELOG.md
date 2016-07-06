@@ -1,3 +1,13 @@
+<a name="0.0.117"></a>
+## [0.0.117](https://github.com/pierrecholhot/icon-fonts/compare/0.0.116...0.0.117) (2016-07-06)
+
+
+### Features
+
+* **icons:** suplier.svg, tel.svg, tool.svg, track.svg, trash-thick.svg ([d99ec79](https://github.com/pierrecholhot/icon-fonts/commit/d99ec79))
+
+
+
 <a name="0.0.116"></a>
 ## [0.0.116](https://github.com/pierrecholhot/icon-fonts/compare/0.0.115...0.0.116) (2016-07-06)
 
