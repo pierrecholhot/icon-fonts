@@ -27,7 +27,6 @@ Save your file as SVG with the following settings:
 - Fonts Type: SVG
 - Fonts Subsetting: None
 - Options Image Location: Embed
-
 - Advanced Options
 	- CSS Properties: Presentation Attributes
 	- Decimal Places: 1
