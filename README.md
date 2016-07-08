@@ -61,3 +61,23 @@ Save your file as SVG with the following settings:
 ### When you DELETE existing icons
 
     gulp icons --major
+
+
+
+
+
+## Example
+
+We need to edit TEL.SVG and delete USER.SVG and then add a new icon called BRAND.SVG
+**Note: When you have to EDIT and DELETE multiple icons, run the `gulp icons` command for each batch..**
+
+### Solution
+
+1- Edit TEL.SVG
+2- Run `gulp icons --minor` to bump the minor version and commit/tag
+
+3- Delete USER.SVG
+4- Run `gulp icons --major` to bump the major version and commit/tag
+
+5- Add BRAND.SVG in `src/svg`
+6- Run `gulp icons` to bump the patch version and commit/tag
