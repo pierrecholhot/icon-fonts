@@ -60,7 +60,7 @@ function bumpVersion() {
   for (var i = 0; i < config.bump.allowed.length; i++) {
     if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] }
   }
-  return gulp.src(config.bump.package)
+  return gulp.src(config.src.package)
     .pipe(bump(opts).on('error', util.log))
     .pipe(gulp.dest('./'));
 }
@@ -96,7 +96,7 @@ function pushChanges(callback) {
 }
 
 function parseVersion() {
-  return JSON.parse(fs.readFileSync(config.bump.package, 'utf8')).version;
+  return JSON.parse(fs.readFileSync(config.src.package, 'utf8')).version;
 }
 
 function createNewTag(callback) {
@@ -110,17 +110,17 @@ function createNewTag(callback) {
 
 function generateChangelog() {
   return changelog({ preset: 'angular', releaseCount: 0 })
-    .pipe(fs.createWriteStream(config.changelog.src));
+    .pipe(fs.createWriteStream(config.src.changelog));
 }
 
 function commitChangelog(callback) {
-  return gulp.src(config.changelog.src)
+  return gulp.src(config.src.changelog)
     .pipe(git.add())
     .pipe(git.commit('chore(changelog)'));
 }
 
 function readMe() {
-  console.log(fs.readFileSync('README.md', 'utf8'));
+  console.log(fs.readFileSync(config.src.readme, 'utf8'));
 }
 
 function addIcons(callback) {

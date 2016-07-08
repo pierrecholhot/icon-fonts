@@ -46,3 +46,18 @@ Save your file as SVG with the following settings:
 
 - Drop your SVG file into `src/svg`
 - Run `gulp icons` to generate the font files and CSS then push a new tag to the remote repo
+
+
+## Commands
+
+### When you ADD new icons
+
+		gulp icons # or gulp icons --patch
+
+### When you EDIT existing icons
+
+		gulp icons --minor
+
+### When you DELETE existing icons
+
+		gulp icons --major

@@ -1,11 +1,13 @@
 module.exports = Object.freeze({
+
   fontName: 'brand-icons',
   fontFormats: ['ttf', 'eot', 'woff', 'woff2', 'svg'],
   fontPathFromStyles: '../fonts/',
+
   bump: {
-    package: './package.json',
     allowed: ['patch', 'minor', 'major']
   },
+
   git: {
     upstream: 'origin',
     branch: 'master',
@@ -13,18 +15,21 @@ module.exports = Object.freeze({
     changedIconsCommitMessage: 'feat(icons): <%= icons %>',
     tagCommitMessage: 'Created tag for version: <%= version %>'
   },
+
   src: {
     svg: './src/svg/*.svg',
-    templates: './src/templates/**/*.*'
+    templates: './src/templates/**/*.*',
+    changelog: './CHANGELOG.md',
+    readme: './README.md',
+    package: './package.json'
   },
+
   dist: {
     root: './dist',
     fonts: './dist/fonts',
     styles: './dist/styles'
   },
-  changelog: {
-    src: './CHANGELOG.md'
-  },
+
   done: [
     '', '',
     '================================================================================',
@@ -34,4 +39,5 @@ module.exports = Object.freeze({
     '================================================================================',
     '', ''
   ]
+
 });
