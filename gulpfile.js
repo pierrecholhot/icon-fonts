@@ -152,7 +152,7 @@ function allIcons(callback) {
     'ಠ-commitChanges',
     'ಠ-pushChanges',
     function (error) {
-      finish(error, 'Icons updated successfully! Don\'t forget to `gulp tag` when you are finished.');
+      finish(error, 'Icons updated! Don\'t forget to `gulp tag` when you are finished');
       callback(error);
     }
   );
