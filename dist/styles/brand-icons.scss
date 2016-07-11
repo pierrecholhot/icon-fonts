@@ -26,6 +26,7 @@
   @if $filename == bulle-entreprise { $char: "\EA08"; }
   @if $filename == bulle { $char: "\EA09"; }
   @if $filename == bulles { $char: "\EA0A"; }
+  @if $filename == tel { $char: "\EA0B"; }
   @return $char;
 }
 
@@ -50,3 +51,4 @@
 .brand-icons-bulle-entreprise { @include brand-icons(bulle-entreprise); }
 .brand-icons-bulle { @include brand-icons(bulle); }
 .brand-icons-bulles { @include brand-icons(bulles); }
+.brand-icons-tel { @include brand-icons(tel); }
