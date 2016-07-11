@@ -79,14 +79,10 @@ We need to edit TEL.SVG and delete USER.SVG and then add a new icon called BRAND
 
 ### Solution
 
-1- Edit TEL.SVG
-2- Run `gulp icons --edit` to bump the minor version and commit/tag
-3- Run `gulp tag` to generate a tag and push it
-
-4- Delete USER.SVG
-5- Run `gulp icons --delete` to bump the major version and commit/tag
-6- Run `gulp tag` to generate a tag and push it
-
-7- Add BRAND.SVG in `src/svg`
-8- Run `gulp icons` to bump the patch version and commit/tag
-9- Run `gulp tag` to generate a tag and push it
+0. Edit TEL.SVG
+0. Run `gulp icons --edit` to bump the minor version and commit/push
+0. Delete USER.SVG
+0. Run `gulp icons --delete` to bump the major version and commit/push
+0. Add BRAND.SVG in `src/svg`
+0. Run `gulp icons` to bump the patch version and commit/push
+0. Run `gulp tag` to generate a tag and push it
