@@ -134,15 +134,15 @@ function readMe() {
   console.log(fs.readFileSync(config.src.readme, 'utf8'));
 }
 
-function finish(error) {
+function finish(error, message) {
   console.log(_.template(config.done.join('\n'))({
     fontName: config.fontName,
     version: parseVersion(),
-    message: error ? error.message : 'Release finished successfully!'
+    message: error ? error.message : message
   }));
 }
 
-function addIcons(callback) {
+function allIcons(callback) {
   runSequence(
     'ಠ-cleanDist',
     'ಠ-generateFonts',
@@ -152,7 +152,7 @@ function addIcons(callback) {
     'ಠ-commitChanges',
     'ಠ-pushChanges',
     function (error) {
-      finish(error);
+      finish(error, 'Icons updated successfully! Don\'t forget to `gulp tag` when you are finished.');
       callback(error);
     }
   );
@@ -165,7 +165,7 @@ function tagVersion(callback) {
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      finish(error);
+      finish(error, 'Release finished successfully!');
       callback(error);
     }
   );
@@ -183,5 +183,5 @@ gulp.task('ಠ-generateChangelog', generateChangelog);
 gulp.task('ಠ-commitChangelog', commitChangelog);
 
 gulp.task('default', readMe);
-gulp.task('icons', addIcons);
+gulp.task('icons', allIcons);
 gulp.task('tag', tagVersion);
