@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/pierrecholhot/font-icons-starter-kit/compare/1.1.0...1.1.1) (2016-07-11)
+
+
+### Features
+
+* **add-icons:** share.svg ([261e617](https://github.com/pierrecholhot/font-icons-starter-kit/commit/261e617))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/pierrecholhot/font-icons-starter-kit/compare/1.0.0...1.1.0) (2016-07-11)
 
