@@ -19,6 +19,12 @@ var runSequence = require('run-sequence');
 
 var changedIcons = [];
 
+var bumpMap = {
+  'add': 'patch',
+  'edit': 'minor',
+  'delete': 'major'
+};
+
 function cleanDist(callback) {
   return del(config.dist.root, callback);
 }
@@ -54,14 +60,19 @@ function generateFonts(callback) {
   async.parallel([handleGlyphs, handleFonts], callback);
 }
 
-function bumpVersion() {
-  var opts = { type: config.bump.allowed[0] };
+function getBumpType(v) {
   var args = minimist(process.argv.slice(2));
-  for (var i = 0; i < config.bump.allowed.length; i++) {
-    if (args[config.bump.allowed[i]]) { opts.type = config.bump.allowed[i] }
-  }
+  if (args.add) { action = 'add'; }
+  if (args.edit) { action = 'edit'; }
+  if (args.delete) { action = 'delete'; }
+  if (!action) { action = 'add'; }
+  return v ? action : bumpMap[action];
+}
+
+function bumpVersion() {
+  var type = getBumpType();
   return gulp.src(config.src.package)
-    .pipe(bump(opts).on('error', util.log))
+    .pipe(bump({type: type}).on('error', util.log))
     .pipe(gulp.dest('./'));
 }
 
@@ -85,6 +96,7 @@ function commitChanges() {
   var message = config.git.defaultCommitMessage;
   if (changedIcons.length) {
     message = _.template(config.git.changedIconsCommitMessage)({
+      action: getBumpType(true),
       icons: changedIcons.join(', ')
     });
   }

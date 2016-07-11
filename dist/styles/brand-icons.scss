@@ -31,9 +31,6 @@
   @if $filename == suplier { $char: "\EA0D"; }
   @if $filename == tel { $char: "\EA0E"; }
   @if $filename == tool { $char: "\EA0F"; }
-  @if $filename == track { $char: "\EA10"; }
-  @if $filename == trash-thick { $char: "\EA11"; }
-  @if $filename == user-bubble { $char: "\EA12"; }
   @return $char;
 }
 
@@ -63,6 +60,3 @@
 .brand-icons-suplier { @include brand-icons(suplier); }
 .brand-icons-tel { @include brand-icons(tel); }
 .brand-icons-tool { @include brand-icons(tool); }
-.brand-icons-track { @include brand-icons(track); }
-.brand-icons-trash-thick { @include brand-icons(trash-thick); }
-.brand-icons-user-bubble { @include brand-icons(user-bubble); }

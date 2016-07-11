@@ -12,7 +12,7 @@ module.exports = Object.freeze({
     upstream: 'origin',
     branch: 'master',
     defaultCommitMessage: 'chore(update): Automated build',
-    changedIconsCommitMessage: 'feat(icons): <%= icons %>',
+    changedIconsCommitMessage: 'feat(<%= action %>-icons): <%= icons %>',
     tagCommitMessage: 'Created tag for version: <%= version %>'
   },
 
