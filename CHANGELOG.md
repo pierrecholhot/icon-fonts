@@ -1,3 +1,15 @@
+<a name="2.1.1"></a>
+## [2.1.1](https://github.com/pierrecholhot/font-icons-starter-kit/compare/1.1.1...2.1.1) (2016-07-11)
+
+
+### Features
+
+* **add-icons:** tel.svg ([a2afe2b](https://github.com/pierrecholhot/font-icons-starter-kit/commit/a2afe2b))
+* **delete-icons:** calculator.svg, calendar.svg, share.svg, suplier.svg, tel.svg, tool.svg ([9995091](https://github.com/pierrecholhot/font-icons-starter-kit/commit/9995091))
+* **edit-icons:** btn-plus2.svg ([fedb7c1](https://github.com/pierrecholhot/font-icons-starter-kit/commit/fedb7c1))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/pierrecholhot/font-icons-starter-kit/compare/1.1.0...1.1.1) (2016-07-11)
 
