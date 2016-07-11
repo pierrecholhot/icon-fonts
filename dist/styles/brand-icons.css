@@ -22,6 +22,7 @@
 .brand-icons-bulles:before { content: "\EA0A"; } 
 .brand-icons-calculator:before { content: "\EA0B"; } 
 .brand-icons-calendar:before { content: "\EA0C"; } 
-.brand-icons-suplier:before { content: "\EA0D"; } 
-.brand-icons-tel:before { content: "\EA0E"; } 
-.brand-icons-tool:before { content: "\EA0F"; } 
+.brand-icons-share:before { content: "\EA0D"; } 
+.brand-icons-suplier:before { content: "\EA0E"; } 
+.brand-icons-tel:before { content: "\EA0F"; } 
+.brand-icons-tool:before { content: "\EA10"; } 

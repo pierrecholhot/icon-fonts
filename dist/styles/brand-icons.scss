@@ -28,9 +28,10 @@
   @if $filename == bulles { $char: "\EA0A"; }
   @if $filename == calculator { $char: "\EA0B"; }
   @if $filename == calendar { $char: "\EA0C"; }
-  @if $filename == suplier { $char: "\EA0D"; }
-  @if $filename == tel { $char: "\EA0E"; }
-  @if $filename == tool { $char: "\EA0F"; }
+  @if $filename == share { $char: "\EA0D"; }
+  @if $filename == suplier { $char: "\EA0E"; }
+  @if $filename == tel { $char: "\EA0F"; }
+  @if $filename == tool { $char: "\EA10"; }
   @return $char;
 }
 
@@ -57,6 +58,7 @@
 .brand-icons-bulles { @include brand-icons(bulles); }
 .brand-icons-calculator { @include brand-icons(calculator); }
 .brand-icons-calendar { @include brand-icons(calendar); }
+.brand-icons-share { @include brand-icons(share); }
 .brand-icons-suplier { @include brand-icons(suplier); }
 .brand-icons-tel { @include brand-icons(tel); }
 .brand-icons-tool { @include brand-icons(tool); }

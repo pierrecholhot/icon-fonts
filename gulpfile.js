@@ -61,7 +61,7 @@ function generateFonts(callback) {
 }
 
 function getBumpType(v) {
-  var args = minimist(process.argv.slice(2));
+  var action, args = minimist(process.argv.slice(2));
   if (args.add) { action = 'add'; }
   if (args.edit) { action = 'edit'; }
   if (args.delete) { action = 'delete'; }
