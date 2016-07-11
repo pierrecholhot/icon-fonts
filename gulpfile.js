@@ -70,9 +70,8 @@ function getBumpType(v) {
 }
 
 function bumpVersion() {
-  var type = getBumpType();
   return gulp.src(config.src.package)
-    .pipe(bump({type: type}).on('error', util.log))
+    .pipe(bump({type: getBumpType()}).on('error', util.log))
     .pipe(gulp.dest('./'));
 }
 
@@ -135,6 +134,14 @@ function readMe() {
   console.log(fs.readFileSync(config.src.readme, 'utf8'));
 }
 
+function finish(error) {
+  console.log(_.template(config.done.join('\n'))({
+    fontName: config.fontName,
+    version: parseVersion(),
+    message: error ? error.message : 'Release finished successfully!'
+  }));
+}
+
 function addIcons(callback) {
   runSequence(
     'ಠ-cleanDist',
@@ -144,16 +151,21 @@ function addIcons(callback) {
     'ಠ-storeChanges',
     'ಠ-commitChanges',
     'ಠ-pushChanges',
+    function (error) {
+      finish(error);
+      callback(error);
+    }
+  );
+}
+
+function tagVersion(callback) {
+  runSequence(
     'ಠ-createNewTag',
     'ಠ-generateChangelog',
     'ಠ-commitChangelog',
     'ಠ-pushChanges',
     function (error) {
-      console.log(_.template(config.done.join('\n'))({
-        fontName: config.fontName,
-        version: parseVersion(),
-        message: error ? error.message : 'Release finished successfully!'
-      }));
+      finish(error);
       callback(error);
     }
   );
@@ -172,3 +184,4 @@ gulp.task('ಠ-commitChangelog', commitChangelog);
 
 gulp.task('default', readMe);
 gulp.task('icons', addIcons);
+gulp.task('tag', tagVersion);

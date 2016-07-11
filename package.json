@@ -1,6 +1,6 @@
 {
   "name": "font-icons-starter-kit",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Font icons repository starter kit let's you host your project's font-icons in a separate repository to avoid having to DIFF binary files.",
   "main": "gulpfile.js",
   "private": true,
