@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.1.2...1.0.0) (2016-07-11)
+
+
+### Features
+
+* **delete-icons:** track.svg, trash-thick.svg, user-bubble.svg ([51ed64f](https://github.com/pierrecholhot/font-icons-starter-kit/commit/51ed64f))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/pierrecholhot/font-icons-starter-kit/compare/0.1.1...0.1.2) (2016-07-08)
 
