@@ -85,4 +85,4 @@ We need to edit TEL.SVG and delete USER.SVG and then add a new icon called BRAND
 0. Run `gulp icons --delete` to bump the major version and commit/push
 0. Add BRAND.SVG in `src/svg`
 0. Run `gulp icons` to bump the patch version and commit/push
-0. Run `gulp tag` to generate a tag and push it
+0. Finally _!important_ run `gulp tag` to generate a tag and push it
