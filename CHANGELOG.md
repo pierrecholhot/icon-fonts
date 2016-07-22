@@ -1,3 +1,8 @@
+<a name="2.1.6"></a>
+## [2.1.6](https://github.com/pierrecholhot/font-icons-starter-kit/compare/2.1.5...2.1.6) (2016-07-22)
+
+
+
 <a name="2.1.5"></a>
 ## [2.1.5](https://github.com/pierrecholhot/font-icons-starter-kit/compare/2.1.1...2.1.5) (2016-07-11)
 
