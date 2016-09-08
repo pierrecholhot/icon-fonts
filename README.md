@@ -51,7 +51,7 @@ Save your file as SVG with the following settings:
 	- append `--edit` when you have edited icons
 	- append `--delete` when you have deleted icons
 
-- Run `gulp tag` then push a new tag to the remote repo
+- Run `gulp tag` to push a new tag to the remote repo
 
 
 ## Commands
