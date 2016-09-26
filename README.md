@@ -56,15 +56,15 @@ Save your file as SVG with the following settings:
 
 ## Commands
 
-### When you ADD new icons
+### After you ADDed new icons
 
     gulp icons # or gulp icons --add
 
-### When you EDIT existing icons
+### After you EDITed existing icons
 
     gulp icons --edit
 
-### When you DELETE existing icons
+### After you DELETEd existing icons
 
     gulp icons --delete
 
